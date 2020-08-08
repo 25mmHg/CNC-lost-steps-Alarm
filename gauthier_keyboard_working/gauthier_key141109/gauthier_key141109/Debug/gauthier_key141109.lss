@@ -1,0 +1,1531 @@
+
+gauthier_key141109.elf:     file format elf32-avr
+
+Sections:
+Idx Name          Size      VMA       LMA       File off  Algn
+  0 .data         00000002  00800100  00000750  000007e4  2**0
+                  CONTENTS, ALLOC, LOAD, DATA
+  1 .text         00000750  00000000  00000000  00000094  2**1
+                  CONTENTS, ALLOC, LOAD, READONLY, CODE
+  2 .bss          0000000b  00800102  00800102  000007e6  2**0
+                  ALLOC
+  3 .stab         000006cc  00000000  00000000  000007e8  2**2
+                  CONTENTS, READONLY, DEBUGGING
+  4 .stabstr      00000097  00000000  00000000  00000eb4  2**0
+                  CONTENTS, READONLY, DEBUGGING
+  5 .comment      0000002f  00000000  00000000  00000f4b  2**0
+                  CONTENTS, READONLY
+  6 .debug_aranges 00000068  00000000  00000000  00000f7a  2**0
+                  CONTENTS, READONLY, DEBUGGING
+  7 .debug_info   000009da  00000000  00000000  00000fe2  2**0
+                  CONTENTS, READONLY, DEBUGGING
+  8 .debug_abbrev 00000339  00000000  00000000  000019bc  2**0
+                  CONTENTS, READONLY, DEBUGGING
+  9 .debug_line   000004b7  00000000  00000000  00001cf5  2**0
+                  CONTENTS, READONLY, DEBUGGING
+ 10 .debug_frame  00000130  00000000  00000000  000021ac  2**2
+                  CONTENTS, READONLY, DEBUGGING
+ 11 .debug_str    0000037e  00000000  00000000  000022dc  2**0
+                  CONTENTS, READONLY, DEBUGGING
+ 12 .debug_loc    00000a70  00000000  00000000  0000265a  2**0
+                  CONTENTS, READONLY, DEBUGGING
+ 13 .debug_ranges 00000080  00000000  00000000  000030ca  2**0
+                  CONTENTS, READONLY, DEBUGGING
+
+Disassembly of section .text:
+
+00000000 <__vectors>:
+   0:	0c 94 c0 00 	jmp	0x180	; 0x180 <__ctors_end>
+   4:	0c 94 dd 00 	jmp	0x1ba	; 0x1ba <__bad_interrupt>
+   8:	0c 94 dd 00 	jmp	0x1ba	; 0x1ba <__bad_interrupt>
+   c:	0c 94 dd 00 	jmp	0x1ba	; 0x1ba <__bad_interrupt>
+  10:	0c 94 dd 00 	jmp	0x1ba	; 0x1ba <__bad_interrupt>
+  14:	0c 94 dd 00 	jmp	0x1ba	; 0x1ba <__bad_interrupt>
+  18:	0c 94 dd 00 	jmp	0x1ba	; 0x1ba <__bad_interrupt>
+  1c:	0c 94 dd 00 	jmp	0x1ba	; 0x1ba <__bad_interrupt>
+  20:	0c 94 dd 00 	jmp	0x1ba	; 0x1ba <__bad_interrupt>
+  24:	0c 94 dd 00 	jmp	0x1ba	; 0x1ba <__bad_interrupt>
+  28:	0c 94 9b 01 	jmp	0x336	; 0x336 <__vector_10>
+  2c:	0c 94 ff 01 	jmp	0x3fe	; 0x3fe <__vector_11>
+  30:	0c 94 dd 00 	jmp	0x1ba	; 0x1ba <__bad_interrupt>
+  34:	0c 94 dd 00 	jmp	0x1ba	; 0x1ba <__bad_interrupt>
+  38:	0c 94 dd 00 	jmp	0x1ba	; 0x1ba <__bad_interrupt>
+  3c:	0c 94 dd 00 	jmp	0x1ba	; 0x1ba <__bad_interrupt>
+  40:	0c 94 dd 00 	jmp	0x1ba	; 0x1ba <__bad_interrupt>
+  44:	0c 94 dd 00 	jmp	0x1ba	; 0x1ba <__bad_interrupt>
+  48:	0c 94 dd 00 	jmp	0x1ba	; 0x1ba <__bad_interrupt>
+  4c:	0c 94 dd 00 	jmp	0x1ba	; 0x1ba <__bad_interrupt>
+  50:	0c 94 dd 00 	jmp	0x1ba	; 0x1ba <__bad_interrupt>
+  54:	0c 94 dd 00 	jmp	0x1ba	; 0x1ba <__bad_interrupt>
+  58:	0c 94 dd 00 	jmp	0x1ba	; 0x1ba <__bad_interrupt>
+  5c:	0c 94 dd 00 	jmp	0x1ba	; 0x1ba <__bad_interrupt>
+  60:	0c 94 dd 00 	jmp	0x1ba	; 0x1ba <__bad_interrupt>
+  64:	0c 94 dd 00 	jmp	0x1ba	; 0x1ba <__bad_interrupt>
+  68:	0c 94 dd 00 	jmp	0x1ba	; 0x1ba <__bad_interrupt>
+  6c:	0c 94 dd 00 	jmp	0x1ba	; 0x1ba <__bad_interrupt>
+  70:	0c 94 dd 00 	jmp	0x1ba	; 0x1ba <__bad_interrupt>
+  74:	0c 94 dd 00 	jmp	0x1ba	; 0x1ba <__bad_interrupt>
+  78:	0c 94 dd 00 	jmp	0x1ba	; 0x1ba <__bad_interrupt>
+  7c:	0c 94 dd 00 	jmp	0x1ba	; 0x1ba <__bad_interrupt>
+  80:	0c 94 dd 00 	jmp	0x1ba	; 0x1ba <__bad_interrupt>
+  84:	0c 94 dd 00 	jmp	0x1ba	; 0x1ba <__bad_interrupt>
+  88:	0c 94 dd 00 	jmp	0x1ba	; 0x1ba <__bad_interrupt>
+  8c:	0c 94 dd 00 	jmp	0x1ba	; 0x1ba <__bad_interrupt>
+  90:	0c 94 dd 00 	jmp	0x1ba	; 0x1ba <__bad_interrupt>
+  94:	0c 94 dd 00 	jmp	0x1ba	; 0x1ba <__bad_interrupt>
+  98:	0c 94 dd 00 	jmp	0x1ba	; 0x1ba <__bad_interrupt>
+  9c:	0c 94 dd 00 	jmp	0x1ba	; 0x1ba <__bad_interrupt>
+  a0:	0c 94 dd 00 	jmp	0x1ba	; 0x1ba <__bad_interrupt>
+  a4:	0c 94 dd 00 	jmp	0x1ba	; 0x1ba <__bad_interrupt>
+  a8:	0c 94 dd 00 	jmp	0x1ba	; 0x1ba <__bad_interrupt>
+
+000000ac <descriptor_list>:
+  ac:	00 01 00 00 e3 00 12 00 02 00 00 f5 00 22 00 22     ............."."
+  bc:	00 00 17 01 3f 00 21 00 00 07 01 09 00 03 00 00     ....?.!.........
+  cc:	56 01 04 01 03 09 04 5a 01 10 02 03 09 04 6c 01     V......Z......l.
+  dc:	12                                                  .
+
+000000dd <endpoint_config_table>:
+  dd:	00 00 01 c1 06 00                                   ......
+
+000000e3 <device_descriptor>:
+  e3:	12 01 00 02 00 00 00 20 c0 16 7c 04 00 01 01 02     ....... ..|.....
+  f3:	00 01                                               ..
+
+000000f5 <config1_descriptor>:
+  f5:	09 02 22 00 01 01 00 c0 32 09 04 00 00 01 03 01     ..".....2.......
+ 105:	01 00 09 21 11 01 00 01 22 3f 00 07 05 83 03 08     ...!...."?......
+ 115:	00 01                                               ..
+
+00000117 <keyboard_hid_report_desc>:
+ 117:	05 01 09 06 a1 01 75 01 95 08 05 07 19 e0 29 e7     ......u.......).
+ 127:	15 00 25 01 81 02 95 01 75 08 81 03 95 05 75 01     ..%.....u.....u.
+ 137:	05 08 19 01 29 05 91 02 95 01 75 03 91 03 95 06     ....).....u.....
+ 147:	75 08 15 00 25 68 05 07 19 00 29 68 81 00 c0        u...%h....)h...
+
+00000156 <string0>:
+ 156:	04 03 09 04                                         ....
+
+0000015a <string1>:
+ 15a:	10 03 4d 00 66 00 67 00 4e 00 61 00 6d 00 65 00     ..M.f.g.N.a.m.e.
+	...
+
+0000016c <string2>:
+ 16c:	12 03 4b 00 65 00 79 00 62 00 6f 00 61 00 72 00     ..K.e.y.b.o.a.r.
+ 17c:	64 00 00 00                                         d...
+
+00000180 <__ctors_end>:
+ 180:	11 24       	eor	r1, r1
+ 182:	1f be       	out	0x3f, r1	; 63
+ 184:	cf ef       	ldi	r28, 0xFF	; 255
+ 186:	da e0       	ldi	r29, 0x0A	; 10
+ 188:	de bf       	out	0x3e, r29	; 62
+ 18a:	cd bf       	out	0x3d, r28	; 61
+
+0000018c <__do_copy_data>:
+ 18c:	11 e0       	ldi	r17, 0x01	; 1
+ 18e:	a0 e0       	ldi	r26, 0x00	; 0
+ 190:	b1 e0       	ldi	r27, 0x01	; 1
+ 192:	e0 e5       	ldi	r30, 0x50	; 80
+ 194:	f7 e0       	ldi	r31, 0x07	; 7
+ 196:	02 c0       	rjmp	.+4      	; 0x19c <__do_copy_data+0x10>
+ 198:	05 90       	lpm	r0, Z+
+ 19a:	0d 92       	st	X+, r0
+ 19c:	a2 30       	cpi	r26, 0x02	; 2
+ 19e:	b1 07       	cpc	r27, r17
+ 1a0:	d9 f7       	brne	.-10     	; 0x198 <__do_copy_data+0xc>
+
+000001a2 <__do_clear_bss>:
+ 1a2:	21 e0       	ldi	r18, 0x01	; 1
+ 1a4:	a2 e0       	ldi	r26, 0x02	; 2
+ 1a6:	b1 e0       	ldi	r27, 0x01	; 1
+ 1a8:	01 c0       	rjmp	.+2      	; 0x1ac <.do_clear_bss_start>
+
+000001aa <.do_clear_bss_loop>:
+ 1aa:	1d 92       	st	X+, r1
+
+000001ac <.do_clear_bss_start>:
+ 1ac:	ad 30       	cpi	r26, 0x0D	; 13
+ 1ae:	b2 07       	cpc	r27, r18
+ 1b0:	e1 f7       	brne	.-8      	; 0x1aa <.do_clear_bss_loop>
+ 1b2:	0e 94 df 00 	call	0x1be	; 0x1be <main>
+ 1b6:	0c 94 a6 03 	jmp	0x74c	; 0x74c <_exit>
+
+000001ba <__bad_interrupt>:
+ 1ba:	0c 94 00 00 	jmp	0	; 0x0 <__vectors>
+
+000001be <main>:
+
+
+int main(void)
+{
+	// set for 16 MHz clock
+	CPU_PRESCALE(0);
+ 1be:	e1 e6       	ldi	r30, 0x61	; 97
+ 1c0:	f0 e0       	ldi	r31, 0x00	; 0
+ 1c2:	80 e8       	ldi	r24, 0x80	; 128
+ 1c4:	80 83       	st	Z, r24
+ 1c6:	10 82       	st	Z, r1
+
+	// Configure all port B and port D pins as inputs with pullup resistors.
+	// See the "Using I/O Pins" page for details.
+	// http://www.pjrc.com/teensy/pins.html
+	DDRD = 0x00;
+ 1c8:	1a b8       	out	0x0a, r1	; 10
+	DDRB = 0x00;
+ 1ca:	14 b8       	out	0x04, r1	; 4
+	PORTB = 0xFF;
+ 1cc:	8f ef       	ldi	r24, 0xFF	; 255
+ 1ce:	85 b9       	out	0x05, r24	; 5
+	PORTD = 0xFF;
+ 1d0:	8b b9       	out	0x0b, r24	; 11
+	LED_CONFIG;
+ 1d2:	56 9a       	sbi	0x0a, 6	; 10
+	LED_ON;
+ 1d4:	5e 9a       	sbi	0x0b, 6	; 11
+
+	// Initialize the USB, and then wait for the host to set configuration.
+	// If the Teensy is powered without a PC connected to the USB port,
+	// this will wait forever.
+	usb_init();
+ 1d6:	0e 94 1a 01 	call	0x234	; 0x234 <usb_init>
+	while (!usb_configured()) /* wait */ ;
+ 1da:	0e 94 31 01 	call	0x262	; 0x262 <usb_configured>
+ 1de:	88 23       	and	r24, r24
+ 1e0:	e1 f3       	breq	.-8      	; 0x1da <main+0x1c>
+	#else
+		//round up by default
+		__ticks_dc = (uint32_t)(ceil(fabs(__tmp)));
+	#endif
+
+	__builtin_avr_delay_cycles(__ticks_dc);
+ 1e2:	2f ef       	ldi	r18, 0xFF	; 255
+ 1e4:	83 ed       	ldi	r24, 0xD3	; 211
+ 1e6:	90 e3       	ldi	r25, 0x30	; 48
+ 1e8:	21 50       	subi	r18, 0x01	; 1
+ 1ea:	80 40       	sbci	r24, 0x00	; 0
+ 1ec:	90 40       	sbci	r25, 0x00	; 0
+ 1ee:	e1 f7       	brne	.-8      	; 0x1e8 <main+0x2a>
+ 1f0:	00 c0       	rjmp	.+0      	; 0x1f2 <main+0x34>
+ 1f2:	00 00       	nop
+ 1f4:	1c c0       	rjmp	.+56     	; 0x22e <main+0x70>
+
+	while(1)
+	{
+		while (ESTOPLOW)
+		{
+			usb_keyboard_press(KEY_SPACE, 0);
+ 1f6:	60 e0       	ldi	r22, 0x00	; 0
+ 1f8:	8c e2       	ldi	r24, 0x2C	; 44
+ 1fa:	0e 94 8c 01 	call	0x318	; 0x318 <usb_keyboard_press>
+			LED_OFF;
+ 1fe:	5e 98       	cbi	0x0b, 6	; 11
+ 200:	2f ef       	ldi	r18, 0xFF	; 255
+ 202:	80 e7       	ldi	r24, 0x70	; 112
+ 204:	92 e0       	ldi	r25, 0x02	; 2
+ 206:	21 50       	subi	r18, 0x01	; 1
+ 208:	80 40       	sbci	r24, 0x00	; 0
+ 20a:	90 40       	sbci	r25, 0x00	; 0
+ 20c:	e1 f7       	brne	.-8      	; 0x206 <main+0x48>
+ 20e:	00 c0       	rjmp	.+0      	; 0x210 <main+0x52>
+ 210:	00 00       	nop
+			_delay_ms(50);
+			usb_keyboard_press(KEY_SPACE, 0);
+ 212:	60 e0       	ldi	r22, 0x00	; 0
+ 214:	8c e2       	ldi	r24, 0x2C	; 44
+ 216:	0e 94 8c 01 	call	0x318	; 0x318 <usb_keyboard_press>
+			LED_ON;
+ 21a:	5e 9a       	sbi	0x0b, 6	; 11
+ 21c:	2f ef       	ldi	r18, 0xFF	; 255
+ 21e:	82 e6       	ldi	r24, 0x62	; 98
+ 220:	9e e2       	ldi	r25, 0x2E	; 46
+ 222:	21 50       	subi	r18, 0x01	; 1
+ 224:	80 40       	sbci	r24, 0x00	; 0
+ 226:	90 40       	sbci	r25, 0x00	; 0
+ 228:	e1 f7       	brne	.-8      	; 0x222 <main+0x64>
+ 22a:	00 c0       	rjmp	.+0      	; 0x22c <main+0x6e>
+ 22c:	00 00       	nop
+	// and do whatever it does to actually be ready for input
+	_delay_ms(1000);
+
+	while(1)
+	{
+		while (ESTOPLOW)
+ 22e:	18 99       	sbic	0x03, 0	; 3
+ 230:	fe cf       	rjmp	.-4      	; 0x22e <main+0x70>
+ 232:	e1 cf       	rjmp	.-62     	; 0x1f6 <main+0x38>
+
+00000234 <usb_init>:
+
+
+// initialize USB
+void usb_init(void)
+{
+	HW_CONFIG();
+ 234:	81 e0       	ldi	r24, 0x01	; 1
+ 236:	80 93 d7 00 	sts	0x00D7, r24
+	USB_FREEZE();	// enable USB
+ 23a:	80 ea       	ldi	r24, 0xA0	; 160
+ 23c:	80 93 d8 00 	sts	0x00D8, r24
+	PLL_CONFIG();				// config PLL
+ 240:	82 e1       	ldi	r24, 0x12	; 18
+ 242:	89 bd       	out	0x29, r24	; 41
+        while (!(PLLCSR & (1<<PLOCK))) ;	// wait for PLL lock
+ 244:	09 b4       	in	r0, 0x29	; 41
+ 246:	00 fe       	sbrs	r0, 0
+ 248:	fd cf       	rjmp	.-6      	; 0x244 <usb_init+0x10>
+        USB_CONFIG();				// start USB clock
+ 24a:	80 e9       	ldi	r24, 0x90	; 144
+ 24c:	80 93 d8 00 	sts	0x00D8, r24
+        UDCON = 0;				// enable attach resistor
+ 250:	10 92 e0 00 	sts	0x00E0, r1
+	usb_configuration = 0;
+ 254:	10 92 0a 01 	sts	0x010A, r1
+        UDIEN = (1<<EORSTE)|(1<<SOFE);
+ 258:	8c e0       	ldi	r24, 0x0C	; 12
+ 25a:	80 93 e2 00 	sts	0x00E2, r24
+	sei();
+ 25e:	78 94       	sei
+ 260:	08 95       	ret
+
+00000262 <usb_configured>:
+
+// return 0 if the USB is not configured, or the configuration
+// number selected by the HOST
+uint8_t usb_configured(void)
+{
+	return usb_configuration;
+ 262:	80 91 0a 01 	lds	r24, 0x010A
+}
+ 266:	08 95       	ret
+
+00000268 <usb_keyboard_send>:
+	return usb_keyboard_send();
+}
+
+// send the contents of keyboard_keys and keyboard_modifier_keys
+int8_t usb_keyboard_send(void)
+{
+ 268:	cf 93       	push	r28
+ 26a:	df 93       	push	r29
+	uint8_t i, intr_state, timeout;
+
+	if (!usb_configuration) return -1;
+ 26c:	80 91 0a 01 	lds	r24, 0x010A
+ 270:	88 23       	and	r24, r24
+ 272:	09 f4       	brne	.+2      	; 0x276 <usb_keyboard_send+0xe>
+ 274:	45 c0       	rjmp	.+138    	; 0x300 <usb_keyboard_send+0x98>
+	intr_state = SREG;
+ 276:	2f b7       	in	r18, 0x3f	; 63
+	cli();
+ 278:	f8 94       	cli
+	UENUM = KEYBOARD_ENDPOINT;
+ 27a:	83 e0       	ldi	r24, 0x03	; 3
+ 27c:	80 93 e9 00 	sts	0x00E9, r24
+	timeout = UDFNUML + 50;
+ 280:	90 91 e4 00 	lds	r25, 0x00E4
+ 284:	9e 5c       	subi	r25, 0xCE	; 206
+	while (1) {
+		// are we ready to transmit?
+		if (UEINTX & (1<<RWAL)) break;
+ 286:	80 91 e8 00 	lds	r24, 0x00E8
+ 28a:	85 fd       	sbrc	r24, 5
+ 28c:	20 c0       	rjmp	.+64     	; 0x2ce <usb_keyboard_send+0x66>
+		SREG = intr_state;
+ 28e:	2f bf       	out	0x3f, r18	; 63
+		// has the USB gone offline?
+		if (!usb_configuration) return -1;
+ 290:	80 91 0a 01 	lds	r24, 0x010A
+ 294:	88 23       	and	r24, r24
+ 296:	b1 f1       	breq	.+108    	; 0x304 <usb_keyboard_send+0x9c>
+		// have we waited too long?
+		if (UDFNUML == timeout) return -1;
+ 298:	80 91 e4 00 	lds	r24, 0x00E4
+ 29c:	89 13       	cpse	r24, r25
+ 29e:	0a c0       	rjmp	.+20     	; 0x2b4 <usb_keyboard_send+0x4c>
+ 2a0:	33 c0       	rjmp	.+102    	; 0x308 <usb_keyboard_send+0xa0>
+	UENUM = KEYBOARD_ENDPOINT;
+	timeout = UDFNUML + 50;
+	while (1) {
+		// are we ready to transmit?
+		if (UEINTX & (1<<RWAL)) break;
+		SREG = intr_state;
+ 2a2:	2f bf       	out	0x3f, r18	; 63
+		// has the USB gone offline?
+		if (!usb_configuration) return -1;
+ 2a4:	80 91 0a 01 	lds	r24, 0x010A
+ 2a8:	88 23       	and	r24, r24
+ 2aa:	81 f1       	breq	.+96     	; 0x30c <usb_keyboard_send+0xa4>
+		// have we waited too long?
+		if (UDFNUML == timeout) return -1;
+ 2ac:	88 81       	ld	r24, Y
+ 2ae:	89 13       	cpse	r24, r25
+ 2b0:	08 c0       	rjmp	.+16     	; 0x2c2 <usb_keyboard_send+0x5a>
+ 2b2:	2e c0       	rjmp	.+92     	; 0x310 <usb_keyboard_send+0xa8>
+		// get ready to try checking again
+		intr_state = SREG;
+		cli();
+		UENUM = KEYBOARD_ENDPOINT;
+ 2b4:	a9 ee       	ldi	r26, 0xE9	; 233
+ 2b6:	b0 e0       	ldi	r27, 0x00	; 0
+ 2b8:	33 e0       	ldi	r19, 0x03	; 3
+	cli();
+	UENUM = KEYBOARD_ENDPOINT;
+	timeout = UDFNUML + 50;
+	while (1) {
+		// are we ready to transmit?
+		if (UEINTX & (1<<RWAL)) break;
+ 2ba:	e8 ee       	ldi	r30, 0xE8	; 232
+ 2bc:	f0 e0       	ldi	r31, 0x00	; 0
+		SREG = intr_state;
+		// has the USB gone offline?
+		if (!usb_configuration) return -1;
+		// have we waited too long?
+		if (UDFNUML == timeout) return -1;
+ 2be:	c4 ee       	ldi	r28, 0xE4	; 228
+ 2c0:	d0 e0       	ldi	r29, 0x00	; 0
+		// get ready to try checking again
+		intr_state = SREG;
+ 2c2:	2f b7       	in	r18, 0x3f	; 63
+		cli();
+ 2c4:	f8 94       	cli
+		UENUM = KEYBOARD_ENDPOINT;
+ 2c6:	3c 93       	st	X, r19
+	cli();
+	UENUM = KEYBOARD_ENDPOINT;
+	timeout = UDFNUML + 50;
+	while (1) {
+		// are we ready to transmit?
+		if (UEINTX & (1<<RWAL)) break;
+ 2c8:	80 81       	ld	r24, Z
+ 2ca:	85 ff       	sbrs	r24, 5
+ 2cc:	ea cf       	rjmp	.-44     	; 0x2a2 <usb_keyboard_send+0x3a>
+		// get ready to try checking again
+		intr_state = SREG;
+		cli();
+		UENUM = KEYBOARD_ENDPOINT;
+	}
+	UEDATX = keyboard_modifier_keys;
+ 2ce:	80 91 09 01 	lds	r24, 0x0109
+ 2d2:	e1 ef       	ldi	r30, 0xF1	; 241
+ 2d4:	f0 e0       	ldi	r31, 0x00	; 0
+ 2d6:	80 83       	st	Z, r24
+	UEDATX = 0;
+ 2d8:	10 82       	st	Z, r1
+ 2da:	e3 e0       	ldi	r30, 0x03	; 3
+ 2dc:	f1 e0       	ldi	r31, 0x01	; 1
+	keyboard_keys[0] = 0;
+	return usb_keyboard_send();
+}
+
+// send the contents of keyboard_keys and keyboard_modifier_keys
+int8_t usb_keyboard_send(void)
+ 2de:	89 e0       	ldi	r24, 0x09	; 9
+ 2e0:	91 e0       	ldi	r25, 0x01	; 1
+		UENUM = KEYBOARD_ENDPOINT;
+	}
+	UEDATX = keyboard_modifier_keys;
+	UEDATX = 0;
+	for (i=0; i<6; i++) {
+		UEDATX = keyboard_keys[i];
+ 2e2:	a1 ef       	ldi	r26, 0xF1	; 241
+ 2e4:	b0 e0       	ldi	r27, 0x00	; 0
+ 2e6:	31 91       	ld	r19, Z+
+ 2e8:	3c 93       	st	X, r19
+		cli();
+		UENUM = KEYBOARD_ENDPOINT;
+	}
+	UEDATX = keyboard_modifier_keys;
+	UEDATX = 0;
+	for (i=0; i<6; i++) {
+ 2ea:	e8 17       	cp	r30, r24
+ 2ec:	f9 07       	cpc	r31, r25
+ 2ee:	d9 f7       	brne	.-10     	; 0x2e6 <usb_keyboard_send+0x7e>
+		UEDATX = keyboard_keys[i];
+	}
+	UEINTX = 0x3A;
+ 2f0:	8a e3       	ldi	r24, 0x3A	; 58
+ 2f2:	80 93 e8 00 	sts	0x00E8, r24
+	keyboard_idle_count = 0;
+ 2f6:	10 92 0b 01 	sts	0x010B, r1
+	SREG = intr_state;
+ 2fa:	2f bf       	out	0x3f, r18	; 63
+	return 0;
+ 2fc:	80 e0       	ldi	r24, 0x00	; 0
+ 2fe:	09 c0       	rjmp	.+18     	; 0x312 <usb_keyboard_send+0xaa>
+// send the contents of keyboard_keys and keyboard_modifier_keys
+int8_t usb_keyboard_send(void)
+{
+	uint8_t i, intr_state, timeout;
+
+	if (!usb_configuration) return -1;
+ 300:	8f ef       	ldi	r24, 0xFF	; 255
+ 302:	07 c0       	rjmp	.+14     	; 0x312 <usb_keyboard_send+0xaa>
+	while (1) {
+		// are we ready to transmit?
+		if (UEINTX & (1<<RWAL)) break;
+		SREG = intr_state;
+		// has the USB gone offline?
+		if (!usb_configuration) return -1;
+ 304:	8f ef       	ldi	r24, 0xFF	; 255
+ 306:	05 c0       	rjmp	.+10     	; 0x312 <usb_keyboard_send+0xaa>
+		// have we waited too long?
+		if (UDFNUML == timeout) return -1;
+ 308:	8f ef       	ldi	r24, 0xFF	; 255
+ 30a:	03 c0       	rjmp	.+6      	; 0x312 <usb_keyboard_send+0xaa>
+	while (1) {
+		// are we ready to transmit?
+		if (UEINTX & (1<<RWAL)) break;
+		SREG = intr_state;
+		// has the USB gone offline?
+		if (!usb_configuration) return -1;
+ 30c:	8f ef       	ldi	r24, 0xFF	; 255
+ 30e:	01 c0       	rjmp	.+2      	; 0x312 <usb_keyboard_send+0xaa>
+		// have we waited too long?
+		if (UDFNUML == timeout) return -1;
+ 310:	8f ef       	ldi	r24, 0xFF	; 255
+	}
+	UEINTX = 0x3A;
+	keyboard_idle_count = 0;
+	SREG = intr_state;
+	return 0;
+}
+ 312:	df 91       	pop	r29
+ 314:	cf 91       	pop	r28
+ 316:	08 95       	ret
+
+00000318 <usb_keyboard_press>:
+// perform a single keystroke
+int8_t usb_keyboard_press(uint8_t key, uint8_t modifier)
+{
+	int8_t r;
+
+	keyboard_modifier_keys = modifier;
+ 318:	60 93 09 01 	sts	0x0109, r22
+	keyboard_keys[0] = key;
+ 31c:	80 93 03 01 	sts	0x0103, r24
+	r = usb_keyboard_send();
+ 320:	0e 94 34 01 	call	0x268	; 0x268 <usb_keyboard_send>
+	if (r) return r;
+ 324:	81 11       	cpse	r24, r1
+ 326:	06 c0       	rjmp	.+12     	; 0x334 <usb_keyboard_press+0x1c>
+	keyboard_modifier_keys = 0;
+ 328:	10 92 09 01 	sts	0x0109, r1
+	keyboard_keys[0] = 0;
+ 32c:	10 92 03 01 	sts	0x0103, r1
+	return usb_keyboard_send();
+ 330:	0e 94 34 01 	call	0x268	; 0x268 <usb_keyboard_send>
+}
+ 334:	08 95       	ret
+
+00000336 <__vector_10>:
+
+// USB Device Interrupt - handle all device-level events
+// the transmit buffer flushing is triggered by the start of frame
+//
+ISR(USB_GEN_vect)
+{
+ 336:	1f 92       	push	r1
+ 338:	0f 92       	push	r0
+ 33a:	0f b6       	in	r0, 0x3f	; 63
+ 33c:	0f 92       	push	r0
+ 33e:	11 24       	eor	r1, r1
+ 340:	2f 93       	push	r18
+ 342:	8f 93       	push	r24
+ 344:	9f 93       	push	r25
+ 346:	af 93       	push	r26
+ 348:	bf 93       	push	r27
+ 34a:	ef 93       	push	r30
+ 34c:	ff 93       	push	r31
+	uint8_t intbits, t, i;
+	static uint8_t div4=0;
+
+        intbits = UDINT;
+ 34e:	e1 ee       	ldi	r30, 0xE1	; 225
+ 350:	f0 e0       	ldi	r31, 0x00	; 0
+ 352:	80 81       	ld	r24, Z
+        UDINT = 0;
+ 354:	10 82       	st	Z, r1
+        if (intbits & (1<<EORSTI)) {
+ 356:	83 ff       	sbrs	r24, 3
+ 358:	0f c0       	rjmp	.+30     	; 0x378 <__vector_10+0x42>
+		UENUM = 0;
+ 35a:	10 92 e9 00 	sts	0x00E9, r1
+		UECONX = 1;
+ 35e:	91 e0       	ldi	r25, 0x01	; 1
+ 360:	90 93 eb 00 	sts	0x00EB, r25
+		UECFG0X = EP_TYPE_CONTROL;
+ 364:	10 92 ec 00 	sts	0x00EC, r1
+		UECFG1X = EP_SIZE(ENDPOINT0_SIZE) | EP_SINGLE_BUFFER;
+ 368:	92 e2       	ldi	r25, 0x22	; 34
+ 36a:	90 93 ed 00 	sts	0x00ED, r25
+		UEIENX = (1<<RXSTPE);
+ 36e:	98 e0       	ldi	r25, 0x08	; 8
+ 370:	90 93 f0 00 	sts	0x00F0, r25
+		usb_configuration = 0;
+ 374:	10 92 0a 01 	sts	0x010A, r1
+        }
+	if ((intbits & (1<<SOFI)) && usb_configuration) {
+ 378:	82 ff       	sbrs	r24, 2
+ 37a:	35 c0       	rjmp	.+106    	; 0x3e6 <__vector_10+0xb0>
+ 37c:	80 91 0a 01 	lds	r24, 0x010A
+ 380:	88 23       	and	r24, r24
+ 382:	89 f1       	breq	.+98     	; 0x3e6 <__vector_10+0xb0>
+		if (keyboard_idle_config && (++div4 & 3) == 0) {
+ 384:	80 91 00 01 	lds	r24, 0x0100
+ 388:	88 23       	and	r24, r24
+ 38a:	69 f1       	breq	.+90     	; 0x3e6 <__vector_10+0xb0>
+ 38c:	80 91 0c 01 	lds	r24, 0x010C
+ 390:	8f 5f       	subi	r24, 0xFF	; 255
+ 392:	80 93 0c 01 	sts	0x010C, r24
+ 396:	83 70       	andi	r24, 0x03	; 3
+ 398:	31 f5       	brne	.+76     	; 0x3e6 <__vector_10+0xb0>
+			UENUM = KEYBOARD_ENDPOINT;
+ 39a:	83 e0       	ldi	r24, 0x03	; 3
+ 39c:	80 93 e9 00 	sts	0x00E9, r24
+			if (UEINTX & (1<<RWAL)) {
+ 3a0:	80 91 e8 00 	lds	r24, 0x00E8
+ 3a4:	85 ff       	sbrs	r24, 5
+ 3a6:	1f c0       	rjmp	.+62     	; 0x3e6 <__vector_10+0xb0>
+				keyboard_idle_count++;
+ 3a8:	80 91 0b 01 	lds	r24, 0x010B
+ 3ac:	8f 5f       	subi	r24, 0xFF	; 255
+ 3ae:	80 93 0b 01 	sts	0x010B, r24
+				if (keyboard_idle_count == keyboard_idle_config) {
+ 3b2:	90 91 00 01 	lds	r25, 0x0100
+ 3b6:	89 13       	cpse	r24, r25
+ 3b8:	16 c0       	rjmp	.+44     	; 0x3e6 <__vector_10+0xb0>
+					keyboard_idle_count = 0;
+ 3ba:	10 92 0b 01 	sts	0x010B, r1
+					UEDATX = keyboard_modifier_keys;
+ 3be:	80 91 09 01 	lds	r24, 0x0109
+ 3c2:	e1 ef       	ldi	r30, 0xF1	; 241
+ 3c4:	f0 e0       	ldi	r31, 0x00	; 0
+ 3c6:	80 83       	st	Z, r24
+					UEDATX = 0;
+ 3c8:	10 82       	st	Z, r1
+ 3ca:	e3 e0       	ldi	r30, 0x03	; 3
+ 3cc:	f1 e0       	ldi	r31, 0x01	; 1
+
+
+// USB Device Interrupt - handle all device-level events
+// the transmit buffer flushing is triggered by the start of frame
+//
+ISR(USB_GEN_vect)
+ 3ce:	89 e0       	ldi	r24, 0x09	; 9
+ 3d0:	91 e0       	ldi	r25, 0x01	; 1
+				if (keyboard_idle_count == keyboard_idle_config) {
+					keyboard_idle_count = 0;
+					UEDATX = keyboard_modifier_keys;
+					UEDATX = 0;
+					for (i=0; i<6; i++) {
+						UEDATX = keyboard_keys[i];
+ 3d2:	a1 ef       	ldi	r26, 0xF1	; 241
+ 3d4:	b0 e0       	ldi	r27, 0x00	; 0
+ 3d6:	21 91       	ld	r18, Z+
+ 3d8:	2c 93       	st	X, r18
+				keyboard_idle_count++;
+				if (keyboard_idle_count == keyboard_idle_config) {
+					keyboard_idle_count = 0;
+					UEDATX = keyboard_modifier_keys;
+					UEDATX = 0;
+					for (i=0; i<6; i++) {
+ 3da:	e8 17       	cp	r30, r24
+ 3dc:	f9 07       	cpc	r31, r25
+ 3de:	d9 f7       	brne	.-10     	; 0x3d6 <__vector_10+0xa0>
+						UEDATX = keyboard_keys[i];
+					}
+					UEINTX = 0x3A;
+ 3e0:	8a e3       	ldi	r24, 0x3A	; 58
+ 3e2:	80 93 e8 00 	sts	0x00E8, r24
+				}
+			}
+		}
+	}
+}
+ 3e6:	ff 91       	pop	r31
+ 3e8:	ef 91       	pop	r30
+ 3ea:	bf 91       	pop	r27
+ 3ec:	af 91       	pop	r26
+ 3ee:	9f 91       	pop	r25
+ 3f0:	8f 91       	pop	r24
+ 3f2:	2f 91       	pop	r18
+ 3f4:	0f 90       	pop	r0
+ 3f6:	0f be       	out	0x3f, r0	; 63
+ 3f8:	0f 90       	pop	r0
+ 3fa:	1f 90       	pop	r1
+ 3fc:	18 95       	reti
+
+000003fe <__vector_11>:
+// USB Endpoint Interrupt - endpoint 0 is handled here.  The
+// other endpoints are manipulated by the user-callable
+// functions, and the start-of-frame interrupt.
+//
+ISR(USB_COM_vect)
+{
+ 3fe:	1f 92       	push	r1
+ 400:	0f 92       	push	r0
+ 402:	0f b6       	in	r0, 0x3f	; 63
+ 404:	0f 92       	push	r0
+ 406:	11 24       	eor	r1, r1
+ 408:	0f 93       	push	r16
+ 40a:	1f 93       	push	r17
+ 40c:	2f 93       	push	r18
+ 40e:	3f 93       	push	r19
+ 410:	4f 93       	push	r20
+ 412:	5f 93       	push	r21
+ 414:	6f 93       	push	r22
+ 416:	7f 93       	push	r23
+ 418:	8f 93       	push	r24
+ 41a:	9f 93       	push	r25
+ 41c:	af 93       	push	r26
+ 41e:	bf 93       	push	r27
+ 420:	cf 93       	push	r28
+ 422:	df 93       	push	r29
+ 424:	ef 93       	push	r30
+ 426:	ff 93       	push	r31
+	uint16_t wLength;
+	uint16_t desc_val;
+	const uint8_t *desc_addr;
+	uint8_t	desc_length;
+
+        UENUM = 0;
+ 428:	10 92 e9 00 	sts	0x00E9, r1
+	intbits = UEINTX;
+ 42c:	80 91 e8 00 	lds	r24, 0x00E8
+        if (intbits & (1<<RXSTPI)) {
+ 430:	83 ff       	sbrs	r24, 3
+ 432:	70 c1       	rjmp	.+736    	; 0x714 <__vector_11+0x316>
+                bmRequestType = UEDATX;
+ 434:	e1 ef       	ldi	r30, 0xF1	; 241
+ 436:	f0 e0       	ldi	r31, 0x00	; 0
+ 438:	c0 81       	ld	r28, Z
+                bRequest = UEDATX;
+ 43a:	40 81       	ld	r20, Z
+                wValue = UEDATX;
+ 43c:	20 81       	ld	r18, Z
+                wValue |= (UEDATX << 8);
+ 43e:	30 81       	ld	r19, Z
+ 440:	93 2f       	mov	r25, r19
+ 442:	80 e0       	ldi	r24, 0x00	; 0
+ 444:	bc 01       	movw	r22, r24
+ 446:	62 2b       	or	r22, r18
+ 448:	9b 01       	movw	r18, r22
+                wIndex = UEDATX;
+ 44a:	50 81       	ld	r21, Z
+                wIndex |= (UEDATX << 8);
+ 44c:	60 81       	ld	r22, Z
+ 44e:	96 2f       	mov	r25, r22
+ 450:	80 e0       	ldi	r24, 0x00	; 0
+ 452:	bc 01       	movw	r22, r24
+ 454:	65 2b       	or	r22, r21
+                wLength = UEDATX;
+ 456:	a0 81       	ld	r26, Z
+                wLength |= (UEDATX << 8);
+ 458:	b0 81       	ld	r27, Z
+                UEINTX = ~((1<<RXSTPI) | (1<<RXOUTI) | (1<<TXINI));
+ 45a:	82 ef       	ldi	r24, 0xF2	; 242
+ 45c:	80 93 e8 00 	sts	0x00E8, r24
+                if (bRequest == GET_DESCRIPTOR) {
+ 460:	46 30       	cpi	r20, 0x06	; 6
+ 462:	09 f0       	breq	.+2      	; 0x466 <__vector_11+0x68>
+ 464:	59 c0       	rjmp	.+178    	; 0x518 <__vector_11+0x11a>
+ 466:	04 c0       	rjmp	.+8      	; 0x470 <__vector_11+0x72>
+			list = (const uint8_t *)descriptor_list;
+			for (i=0; ; i++) {
+				if (i >= NUM_DESC_LIST) {
+					UECONX = (1<<STALLRQ)|(1<<EPEN);  //stall
+ 468:	81 e2       	ldi	r24, 0x21	; 33
+ 46a:	80 93 eb 00 	sts	0x00EB, r24
+					return;
+ 46e:	59 c1       	rjmp	.+690    	; 0x722 <__vector_11+0x324>
+                wIndex = UEDATX;
+                wIndex |= (UEDATX << 8);
+                wLength = UEDATX;
+                wLength |= (UEDATX << 8);
+                UEINTX = ~((1<<RXSTPI) | (1<<RXOUTI) | (1<<TXINI));
+                if (bRequest == GET_DESCRIPTOR) {
+ 470:	c7 e0       	ldi	r28, 0x07	; 7
+ 472:	8c ea       	ldi	r24, 0xAC	; 172
+ 474:	90 e0       	ldi	r25, 0x00	; 0
+			for (i=0; ; i++) {
+				if (i >= NUM_DESC_LIST) {
+					UECONX = (1<<STALLRQ)|(1<<EPEN);  //stall
+					return;
+				}
+				desc_val = pgm_read_word(list);
+ 476:	fc 01       	movw	r30, r24
+ 478:	45 91       	lpm	r20, Z+
+ 47a:	54 91       	lpm	r21, Z
+				if (desc_val != wValue) {
+ 47c:	24 17       	cp	r18, r20
+ 47e:	35 07       	cpc	r19, r21
+ 480:	11 f0       	breq	.+4      	; 0x486 <__vector_11+0x88>
+					list += sizeof(struct descriptor_list_struct);
+ 482:	07 96       	adiw	r24, 0x07	; 7
+					continue;
+ 484:	1f c0       	rjmp	.+62     	; 0x4c4 <__vector_11+0xc6>
+				}
+				list += 2;
+ 486:	fc 01       	movw	r30, r24
+ 488:	32 96       	adiw	r30, 0x02	; 2
+				desc_val = pgm_read_word(list);
+ 48a:	45 91       	lpm	r20, Z+
+ 48c:	54 91       	lpm	r21, Z
+				if (desc_val != wIndex) {
+ 48e:	64 17       	cp	r22, r20
+ 490:	75 07       	cpc	r23, r21
+ 492:	11 f0       	breq	.+4      	; 0x498 <__vector_11+0x9a>
+					list += sizeof(struct descriptor_list_struct)-2;
+ 494:	07 96       	adiw	r24, 0x07	; 7
+					continue;
+ 496:	16 c0       	rjmp	.+44     	; 0x4c4 <__vector_11+0xc6>
+				}
+				list += 2;
+ 498:	fc 01       	movw	r30, r24
+ 49a:	34 96       	adiw	r30, 0x04	; 4
+				desc_addr = (const uint8_t *)pgm_read_word(list);
+ 49c:	45 91       	lpm	r20, Z+
+ 49e:	54 91       	lpm	r21, Z
+ 4a0:	24 2f       	mov	r18, r20
+ 4a2:	35 2f       	mov	r19, r21
+				list += 2;
+ 4a4:	fc 01       	movw	r30, r24
+ 4a6:	36 96       	adiw	r30, 0x06	; 6
+				desc_length = pgm_read_byte(list);
+ 4a8:	64 91       	lpm	r22, Z
+                wValue = UEDATX;
+                wValue |= (UEDATX << 8);
+                wIndex = UEDATX;
+                wIndex |= (UEDATX << 8);
+                wLength = UEDATX;
+                wLength |= (UEDATX << 8);
+ 4aa:	9b 2f       	mov	r25, r27
+ 4ac:	80 e0       	ldi	r24, 0x00	; 0
+ 4ae:	8a 2b       	or	r24, r26
+				desc_addr = (const uint8_t *)pgm_read_word(list);
+				list += 2;
+				desc_length = pgm_read_byte(list);
+				break;
+			}
+			len = (wLength < 256) ? wLength : 255;
+ 4b0:	8f 3f       	cpi	r24, 0xFF	; 255
+ 4b2:	91 05       	cpc	r25, r1
+ 4b4:	19 f0       	breq	.+6      	; 0x4bc <__vector_11+0xbe>
+ 4b6:	10 f0       	brcs	.+4      	; 0x4bc <__vector_11+0xbe>
+ 4b8:	8f ef       	ldi	r24, 0xFF	; 255
+ 4ba:	90 e0       	ldi	r25, 0x00	; 0
+ 4bc:	86 17       	cp	r24, r22
+ 4be:	28 f4       	brcc	.+10     	; 0x4ca <__vector_11+0xcc>
+ 4c0:	68 2f       	mov	r22, r24
+ 4c2:	03 c0       	rjmp	.+6      	; 0x4ca <__vector_11+0xcc>
+ 4c4:	c1 50       	subi	r28, 0x01	; 1
+                wLength |= (UEDATX << 8);
+                UEINTX = ~((1<<RXSTPI) | (1<<RXOUTI) | (1<<TXINI));
+                if (bRequest == GET_DESCRIPTOR) {
+			list = (const uint8_t *)descriptor_list;
+			for (i=0; ; i++) {
+				if (i >= NUM_DESC_LIST) {
+ 4c6:	b9 f6       	brne	.-82     	; 0x476 <__vector_11+0x78>
+ 4c8:	cf cf       	rjmp	.-98     	; 0x468 <__vector_11+0x6a>
+			len = (wLength < 256) ? wLength : 255;
+			if (len > desc_length) len = desc_length;
+			do {
+				// wait for host ready for IN packet
+				do {
+					i = UEINTX;
+ 4ca:	c8 ee       	ldi	r28, 0xE8	; 232
+ 4cc:	d0 e0       	ldi	r29, 0x00	; 0
+{
+	while (!(UEINTX & (1<<TXINI))) ;
+}
+static inline void usb_send_in(void)
+{
+	UEINTX = ~(1<<TXINI);
+ 4ce:	7e ef       	ldi	r23, 0xFE	; 254
+				} while (!(i & ((1<<TXINI)|(1<<RXOUTI))));
+				if (i & (1<<RXOUTI)) return;	// abort
+				// send IN packet
+				n = len < ENDPOINT0_SIZE ? len : ENDPOINT0_SIZE;
+				for (i = n; i; i--) {
+					UEDATX = pgm_read_byte(desc_addr++);
+ 4d0:	a1 ef       	ldi	r26, 0xF1	; 241
+ 4d2:	b0 e0       	ldi	r27, 0x00	; 0
+			len = (wLength < 256) ? wLength : 255;
+			if (len > desc_length) len = desc_length;
+			do {
+				// wait for host ready for IN packet
+				do {
+					i = UEINTX;
+ 4d4:	98 81       	ld	r25, Y
+				} while (!(i & ((1<<TXINI)|(1<<RXOUTI))));
+ 4d6:	49 2f       	mov	r20, r25
+ 4d8:	45 70       	andi	r20, 0x05	; 5
+ 4da:	e1 f3       	breq	.-8      	; 0x4d4 <__vector_11+0xd6>
+				if (i & (1<<RXOUTI)) return;	// abort
+ 4dc:	92 fd       	sbrc	r25, 2
+ 4de:	21 c1       	rjmp	.+578    	; 0x722 <__vector_11+0x324>
+				// send IN packet
+				n = len < ENDPOINT0_SIZE ? len : ENDPOINT0_SIZE;
+ 4e0:	56 2f       	mov	r21, r22
+ 4e2:	61 32       	cpi	r22, 0x21	; 33
+ 4e4:	08 f0       	brcs	.+2      	; 0x4e8 <__vector_11+0xea>
+ 4e6:	50 e2       	ldi	r21, 0x20	; 32
+				for (i = n; i; i--) {
+ 4e8:	55 23       	and	r21, r21
+ 4ea:	09 f4       	brne	.+2      	; 0x4ee <__vector_11+0xf0>
+ 4ec:	17 c1       	rjmp	.+558    	; 0x71c <__vector_11+0x31e>
+ 4ee:	c9 01       	movw	r24, r18
+ 4f0:	45 2f       	mov	r20, r21
+					UEDATX = pgm_read_byte(desc_addr++);
+ 4f2:	fc 01       	movw	r30, r24
+ 4f4:	01 96       	adiw	r24, 0x01	; 1
+ 4f6:	e4 91       	lpm	r30, Z
+ 4f8:	ec 93       	st	X, r30
+					i = UEINTX;
+				} while (!(i & ((1<<TXINI)|(1<<RXOUTI))));
+				if (i & (1<<RXOUTI)) return;	// abort
+				// send IN packet
+				n = len < ENDPOINT0_SIZE ? len : ENDPOINT0_SIZE;
+				for (i = n; i; i--) {
+ 4fa:	41 50       	subi	r20, 0x01	; 1
+ 4fc:	d1 f7       	brne	.-12     	; 0x4f2 <__vector_11+0xf4>
+
+// USB Endpoint Interrupt - endpoint 0 is handled here.  The
+// other endpoints are manipulated by the user-callable
+// functions, and the start-of-frame interrupt.
+//
+ISR(USB_COM_vect)
+ 4fe:	85 2f       	mov	r24, r21
+ 500:	81 50       	subi	r24, 0x01	; 1
+ 502:	90 e0       	ldi	r25, 0x00	; 0
+ 504:	01 96       	adiw	r24, 0x01	; 1
+ 506:	28 0f       	add	r18, r24
+ 508:	39 1f       	adc	r19, r25
+				// send IN packet
+				n = len < ENDPOINT0_SIZE ? len : ENDPOINT0_SIZE;
+				for (i = n; i; i--) {
+					UEDATX = pgm_read_byte(desc_addr++);
+				}
+				len -= n;
+ 50a:	65 1b       	sub	r22, r21
+{
+	while (!(UEINTX & (1<<TXINI))) ;
+}
+static inline void usb_send_in(void)
+{
+	UEINTX = ~(1<<TXINI);
+ 50c:	78 83       	st	Y, r23
+				for (i = n; i; i--) {
+					UEDATX = pgm_read_byte(desc_addr++);
+				}
+				len -= n;
+				usb_send_in();
+			} while (len || n == ENDPOINT0_SIZE);
+ 50e:	61 11       	cpse	r22, r1
+ 510:	e1 cf       	rjmp	.-62     	; 0x4d4 <__vector_11+0xd6>
+ 512:	50 32       	cpi	r21, 0x20	; 32
+ 514:	f9 f2       	breq	.-66     	; 0x4d4 <__vector_11+0xd6>
+ 516:	05 c1       	rjmp	.+522    	; 0x722 <__vector_11+0x324>
+			return;
+                }
+		if (bRequest == SET_ADDRESS) {
+ 518:	45 30       	cpi	r20, 0x05	; 5
+ 51a:	61 f4       	brne	.+24     	; 0x534 <__vector_11+0x136>
+{
+	while (!(UEINTX & (1<<TXINI))) ;
+}
+static inline void usb_send_in(void)
+{
+	UEINTX = ~(1<<TXINI);
+ 51c:	8e ef       	ldi	r24, 0xFE	; 254
+ 51e:	80 93 e8 00 	sts	0x00E8, r24
+
+
+// Misc functions to wait for ready and send/receive packets
+static inline void usb_wait_in_ready(void)
+{
+	while (!(UEINTX & (1<<TXINI))) ;
+ 522:	e8 ee       	ldi	r30, 0xE8	; 232
+ 524:	f0 e0       	ldi	r31, 0x00	; 0
+ 526:	80 81       	ld	r24, Z
+ 528:	80 ff       	sbrs	r24, 0
+ 52a:	fd cf       	rjmp	.-6      	; 0x526 <__vector_11+0x128>
+			return;
+                }
+		if (bRequest == SET_ADDRESS) {
+			usb_send_in();
+			usb_wait_in_ready();
+			UDADDR = wValue | (1<<ADDEN);
+ 52c:	20 68       	ori	r18, 0x80	; 128
+ 52e:	20 93 e3 00 	sts	0x00E3, r18
+			return;
+ 532:	f7 c0       	rjmp	.+494    	; 0x722 <__vector_11+0x324>
+		}
+		if (bRequest == SET_CONFIGURATION && bmRequestType == 0) {
+ 534:	49 30       	cpi	r20, 0x09	; 9
+ 536:	81 f5       	brne	.+96     	; 0x598 <__vector_11+0x19a>
+ 538:	c1 11       	cpse	r28, r1
+ 53a:	87 c0       	rjmp	.+270    	; 0x64a <__vector_11+0x24c>
+			usb_configuration = wValue;
+ 53c:	20 93 0a 01 	sts	0x010A, r18
+{
+	while (!(UEINTX & (1<<TXINI))) ;
+}
+static inline void usb_send_in(void)
+{
+	UEINTX = ~(1<<TXINI);
+ 540:	8e ef       	ldi	r24, 0xFE	; 254
+ 542:	80 93 e8 00 	sts	0x00E8, r24
+		}
+		if (bRequest == SET_CONFIGURATION && bmRequestType == 0) {
+			usb_configuration = wValue;
+			usb_send_in();
+			cfg = endpoint_config_table;
+			for (i=1; i<5; i++) {
+ 546:	11 e0       	ldi	r17, 0x01	; 1
+			return;
+		}
+		if (bRequest == SET_CONFIGURATION && bmRequestType == 0) {
+			usb_configuration = wValue;
+			usb_send_in();
+			cfg = endpoint_config_table;
+ 548:	8d ed       	ldi	r24, 0xDD	; 221
+ 54a:	90 e0       	ldi	r25, 0x00	; 0
+			for (i=1; i<5; i++) {
+				UENUM = i;
+ 54c:	c9 ee       	ldi	r28, 0xE9	; 233
+ 54e:	d0 e0       	ldi	r29, 0x00	; 0
+				en = pgm_read_byte(cfg++);
+				UECONX = en;
+ 550:	ab ee       	ldi	r26, 0xEB	; 235
+ 552:	b0 e0       	ldi	r27, 0x00	; 0
+				if (en) {
+					UECFG0X = pgm_read_byte(cfg++);
+ 554:	6c ee       	ldi	r22, 0xEC	; 236
+ 556:	70 e0       	ldi	r23, 0x00	; 0
+					UECFG1X = pgm_read_byte(cfg++);
+ 558:	4d ee       	ldi	r20, 0xED	; 237
+ 55a:	50 e0       	ldi	r21, 0x00	; 0
+		if (bRequest == SET_CONFIGURATION && bmRequestType == 0) {
+			usb_configuration = wValue;
+			usb_send_in();
+			cfg = endpoint_config_table;
+			for (i=1; i<5; i++) {
+				UENUM = i;
+ 55c:	18 83       	st	Y, r17
+				en = pgm_read_byte(cfg++);
+ 55e:	9c 01       	movw	r18, r24
+ 560:	2f 5f       	subi	r18, 0xFF	; 255
+ 562:	3f 4f       	sbci	r19, 0xFF	; 255
+ 564:	fc 01       	movw	r30, r24
+ 566:	04 91       	lpm	r16, Z
+				UECONX = en;
+ 568:	0c 93       	st	X, r16
+				if (en) {
+ 56a:	00 23       	and	r16, r16
+ 56c:	59 f0       	breq	.+22     	; 0x584 <__vector_11+0x186>
+					UECFG0X = pgm_read_byte(cfg++);
+ 56e:	f9 01       	movw	r30, r18
+ 570:	24 91       	lpm	r18, Z
+ 572:	fb 01       	movw	r30, r22
+ 574:	20 83       	st	Z, r18
+ 576:	fc 01       	movw	r30, r24
+ 578:	32 96       	adiw	r30, 0x02	; 2
+					UECFG1X = pgm_read_byte(cfg++);
+ 57a:	03 96       	adiw	r24, 0x03	; 3
+ 57c:	24 91       	lpm	r18, Z
+ 57e:	fa 01       	movw	r30, r20
+ 580:	20 83       	st	Z, r18
+ 582:	01 c0       	rjmp	.+2      	; 0x586 <__vector_11+0x188>
+			usb_configuration = wValue;
+			usb_send_in();
+			cfg = endpoint_config_table;
+			for (i=1; i<5; i++) {
+				UENUM = i;
+				en = pgm_read_byte(cfg++);
+ 584:	c9 01       	movw	r24, r18
+		}
+		if (bRequest == SET_CONFIGURATION && bmRequestType == 0) {
+			usb_configuration = wValue;
+			usb_send_in();
+			cfg = endpoint_config_table;
+			for (i=1; i<5; i++) {
+ 586:	1f 5f       	subi	r17, 0xFF	; 255
+ 588:	15 30       	cpi	r17, 0x05	; 5
+ 58a:	41 f7       	brne	.-48     	; 0x55c <__vector_11+0x15e>
+				if (en) {
+					UECFG0X = pgm_read_byte(cfg++);
+					UECFG1X = pgm_read_byte(cfg++);
+				}
+			}
+        		UERST = 0x1E;
+ 58c:	ea ee       	ldi	r30, 0xEA	; 234
+ 58e:	f0 e0       	ldi	r31, 0x00	; 0
+ 590:	8e e1       	ldi	r24, 0x1E	; 30
+ 592:	80 83       	st	Z, r24
+        		UERST = 0;
+ 594:	10 82       	st	Z, r1
+			return;
+ 596:	c5 c0       	rjmp	.+394    	; 0x722 <__vector_11+0x324>
+		}
+		if (bRequest == GET_CONFIGURATION && bmRequestType == 0x80) {
+ 598:	48 30       	cpi	r20, 0x08	; 8
+ 59a:	81 f4       	brne	.+32     	; 0x5bc <__vector_11+0x1be>
+ 59c:	c0 38       	cpi	r28, 0x80	; 128
+ 59e:	09 f0       	breq	.+2      	; 0x5a2 <__vector_11+0x1a4>
+ 5a0:	54 c0       	rjmp	.+168    	; 0x64a <__vector_11+0x24c>
+
+
+// Misc functions to wait for ready and send/receive packets
+static inline void usb_wait_in_ready(void)
+{
+	while (!(UEINTX & (1<<TXINI))) ;
+ 5a2:	e8 ee       	ldi	r30, 0xE8	; 232
+ 5a4:	f0 e0       	ldi	r31, 0x00	; 0
+ 5a6:	80 81       	ld	r24, Z
+ 5a8:	80 ff       	sbrs	r24, 0
+ 5aa:	fd cf       	rjmp	.-6      	; 0x5a6 <__vector_11+0x1a8>
+        		UERST = 0;
+			return;
+		}
+		if (bRequest == GET_CONFIGURATION && bmRequestType == 0x80) {
+			usb_wait_in_ready();
+			UEDATX = usb_configuration;
+ 5ac:	80 91 0a 01 	lds	r24, 0x010A
+ 5b0:	80 93 f1 00 	sts	0x00F1, r24
+{
+	while (!(UEINTX & (1<<TXINI))) ;
+}
+static inline void usb_send_in(void)
+{
+	UEINTX = ~(1<<TXINI);
+ 5b4:	8e ef       	ldi	r24, 0xFE	; 254
+ 5b6:	80 93 e8 00 	sts	0x00E8, r24
+ 5ba:	b3 c0       	rjmp	.+358    	; 0x722 <__vector_11+0x324>
+			UEDATX = usb_configuration;
+			usb_send_in();
+			return;
+		}
+
+		if (bRequest == GET_STATUS) {
+ 5bc:	41 11       	cpse	r20, r1
+ 5be:	1a c0       	rjmp	.+52     	; 0x5f4 <__vector_11+0x1f6>
+
+
+// Misc functions to wait for ready and send/receive packets
+static inline void usb_wait_in_ready(void)
+{
+	while (!(UEINTX & (1<<TXINI))) ;
+ 5c0:	e8 ee       	ldi	r30, 0xE8	; 232
+ 5c2:	f0 e0       	ldi	r31, 0x00	; 0
+ 5c4:	80 81       	ld	r24, Z
+ 5c6:	80 ff       	sbrs	r24, 0
+ 5c8:	fd cf       	rjmp	.-6      	; 0x5c4 <__vector_11+0x1c6>
+
+		if (bRequest == GET_STATUS) {
+			usb_wait_in_ready();
+			i = 0;
+			#ifdef SUPPORT_ENDPOINT_HALT
+			if (bmRequestType == 0x82) {
+ 5ca:	c2 38       	cpi	r28, 0x82	; 130
+ 5cc:	51 f4       	brne	.+20     	; 0x5e2 <__vector_11+0x1e4>
+				UENUM = wIndex;
+ 5ce:	e9 ee       	ldi	r30, 0xE9	; 233
+ 5d0:	f0 e0       	ldi	r31, 0x00	; 0
+ 5d2:	60 83       	st	Z, r22
+				if (UECONX & (1<<STALLRQ)) i = 1;
+ 5d4:	80 91 eb 00 	lds	r24, 0x00EB
+ 5d8:	85 fb       	bst	r24, 5
+ 5da:	88 27       	eor	r24, r24
+ 5dc:	80 f9       	bld	r24, 0
+				UENUM = 0;
+ 5de:	10 82       	st	Z, r1
+ 5e0:	01 c0       	rjmp	.+2      	; 0x5e4 <__vector_11+0x1e6>
+			return;
+		}
+
+		if (bRequest == GET_STATUS) {
+			usb_wait_in_ready();
+			i = 0;
+ 5e2:	80 e0       	ldi	r24, 0x00	; 0
+				UENUM = wIndex;
+				if (UECONX & (1<<STALLRQ)) i = 1;
+				UENUM = 0;
+			}
+			#endif
+			UEDATX = i;
+ 5e4:	e1 ef       	ldi	r30, 0xF1	; 241
+ 5e6:	f0 e0       	ldi	r31, 0x00	; 0
+ 5e8:	80 83       	st	Z, r24
+			UEDATX = 0;
+ 5ea:	10 82       	st	Z, r1
+{
+	while (!(UEINTX & (1<<TXINI))) ;
+}
+static inline void usb_send_in(void)
+{
+	UEINTX = ~(1<<TXINI);
+ 5ec:	8e ef       	ldi	r24, 0xFE	; 254
+ 5ee:	80 93 e8 00 	sts	0x00E8, r24
+ 5f2:	97 c0       	rjmp	.+302    	; 0x722 <__vector_11+0x324>
+			UEDATX = 0;
+			usb_send_in();
+			return;
+		}
+		#ifdef SUPPORT_ENDPOINT_HALT
+		if ((bRequest == CLEAR_FEATURE || bRequest == SET_FEATURE)
+ 5f4:	41 30       	cpi	r20, 0x01	; 1
+ 5f6:	11 f0       	breq	.+4      	; 0x5fc <__vector_11+0x1fe>
+ 5f8:	43 30       	cpi	r20, 0x03	; 3
+ 5fa:	39 f5       	brne	.+78     	; 0x64a <__vector_11+0x24c>
+		  && bmRequestType == 0x02 && wValue == 0) {
+ 5fc:	c2 30       	cpi	r28, 0x02	; 2
+ 5fe:	29 f5       	brne	.+74     	; 0x64a <__vector_11+0x24c>
+ 600:	23 2b       	or	r18, r19
+ 602:	09 f0       	breq	.+2      	; 0x606 <__vector_11+0x208>
+ 604:	87 c0       	rjmp	.+270    	; 0x714 <__vector_11+0x316>
+			i = wIndex & 0x7F;
+ 606:	6f 77       	andi	r22, 0x7F	; 127
+ 608:	77 27       	eor	r23, r23
+			if (i >= 1 && i <= MAX_ENDPOINT) {
+ 60a:	96 2f       	mov	r25, r22
+ 60c:	91 50       	subi	r25, 0x01	; 1
+ 60e:	94 30       	cpi	r25, 0x04	; 4
+ 610:	08 f0       	brcs	.+2      	; 0x614 <__vector_11+0x216>
+ 612:	80 c0       	rjmp	.+256    	; 0x714 <__vector_11+0x316>
+{
+	while (!(UEINTX & (1<<TXINI))) ;
+}
+static inline void usb_send_in(void)
+{
+	UEINTX = ~(1<<TXINI);
+ 614:	9e ef       	ldi	r25, 0xFE	; 254
+ 616:	90 93 e8 00 	sts	0x00E8, r25
+		if ((bRequest == CLEAR_FEATURE || bRequest == SET_FEATURE)
+		  && bmRequestType == 0x02 && wValue == 0) {
+			i = wIndex & 0x7F;
+			if (i >= 1 && i <= MAX_ENDPOINT) {
+				usb_send_in();
+				UENUM = i;
+ 61a:	60 93 e9 00 	sts	0x00E9, r22
+				if (bRequest == SET_FEATURE) {
+ 61e:	43 30       	cpi	r20, 0x03	; 3
+ 620:	21 f4       	brne	.+8      	; 0x62a <__vector_11+0x22c>
+					UECONX = (1<<STALLRQ)|(1<<EPEN);
+ 622:	81 e2       	ldi	r24, 0x21	; 33
+ 624:	80 93 eb 00 	sts	0x00EB, r24
+ 628:	7c c0       	rjmp	.+248    	; 0x722 <__vector_11+0x324>
+				} else {
+					UECONX = (1<<STALLRQC)|(1<<RSTDT)|(1<<EPEN);
+ 62a:	89 e1       	ldi	r24, 0x19	; 25
+ 62c:	80 93 eb 00 	sts	0x00EB, r24
+					UERST = (1 << i);
+ 630:	81 e0       	ldi	r24, 0x01	; 1
+ 632:	90 e0       	ldi	r25, 0x00	; 0
+ 634:	9c 01       	movw	r18, r24
+ 636:	02 c0       	rjmp	.+4      	; 0x63c <__vector_11+0x23e>
+ 638:	22 0f       	add	r18, r18
+ 63a:	33 1f       	adc	r19, r19
+ 63c:	6a 95       	dec	r22
+ 63e:	e2 f7       	brpl	.-8      	; 0x638 <__vector_11+0x23a>
+ 640:	ea ee       	ldi	r30, 0xEA	; 234
+ 642:	f0 e0       	ldi	r31, 0x00	; 0
+ 644:	20 83       	st	Z, r18
+					UERST = 0;
+ 646:	10 82       	st	Z, r1
+ 648:	6c c0       	rjmp	.+216    	; 0x722 <__vector_11+0x324>
+				}
+				return;
+			}
+		}
+		#endif
+		if (wIndex == KEYBOARD_INTERFACE) {
+ 64a:	67 2b       	or	r22, r23
+ 64c:	09 f0       	breq	.+2      	; 0x650 <__vector_11+0x252>
+ 64e:	62 c0       	rjmp	.+196    	; 0x714 <__vector_11+0x316>
+			if (bmRequestType == 0xA1) {
+ 650:	c1 3a       	cpi	r28, 0xA1	; 161
+ 652:	d1 f5       	brne	.+116    	; 0x6c8 <__vector_11+0x2ca>
+				if (bRequest == HID_GET_REPORT) {
+ 654:	41 30       	cpi	r20, 0x01	; 1
+ 656:	d1 f4       	brne	.+52     	; 0x68c <__vector_11+0x28e>
+
+
+// Misc functions to wait for ready and send/receive packets
+static inline void usb_wait_in_ready(void)
+{
+	while (!(UEINTX & (1<<TXINI))) ;
+ 658:	e8 ee       	ldi	r30, 0xE8	; 232
+ 65a:	f0 e0       	ldi	r31, 0x00	; 0
+ 65c:	80 81       	ld	r24, Z
+ 65e:	80 ff       	sbrs	r24, 0
+ 660:	fd cf       	rjmp	.-6      	; 0x65c <__vector_11+0x25e>
+		#endif
+		if (wIndex == KEYBOARD_INTERFACE) {
+			if (bmRequestType == 0xA1) {
+				if (bRequest == HID_GET_REPORT) {
+					usb_wait_in_ready();
+					UEDATX = keyboard_modifier_keys;
+ 662:	80 91 09 01 	lds	r24, 0x0109
+ 666:	e1 ef       	ldi	r30, 0xF1	; 241
+ 668:	f0 e0       	ldi	r31, 0x00	; 0
+ 66a:	80 83       	st	Z, r24
+					UEDATX = 0;
+ 66c:	10 82       	st	Z, r1
+ 66e:	e3 e0       	ldi	r30, 0x03	; 3
+ 670:	f1 e0       	ldi	r31, 0x01	; 1
+
+// USB Endpoint Interrupt - endpoint 0 is handled here.  The
+// other endpoints are manipulated by the user-callable
+// functions, and the start-of-frame interrupt.
+//
+ISR(USB_COM_vect)
+ 672:	89 e0       	ldi	r24, 0x09	; 9
+ 674:	91 e0       	ldi	r25, 0x01	; 1
+				if (bRequest == HID_GET_REPORT) {
+					usb_wait_in_ready();
+					UEDATX = keyboard_modifier_keys;
+					UEDATX = 0;
+					for (i=0; i<6; i++) {
+						UEDATX = keyboard_keys[i];
+ 676:	a1 ef       	ldi	r26, 0xF1	; 241
+ 678:	b0 e0       	ldi	r27, 0x00	; 0
+ 67a:	21 91       	ld	r18, Z+
+ 67c:	2c 93       	st	X, r18
+			if (bmRequestType == 0xA1) {
+				if (bRequest == HID_GET_REPORT) {
+					usb_wait_in_ready();
+					UEDATX = keyboard_modifier_keys;
+					UEDATX = 0;
+					for (i=0; i<6; i++) {
+ 67e:	e8 17       	cp	r30, r24
+ 680:	f9 07       	cpc	r31, r25
+ 682:	d9 f7       	brne	.-10     	; 0x67a <__vector_11+0x27c>
+{
+	while (!(UEINTX & (1<<TXINI))) ;
+}
+static inline void usb_send_in(void)
+{
+	UEINTX = ~(1<<TXINI);
+ 684:	8e ef       	ldi	r24, 0xFE	; 254
+ 686:	80 93 e8 00 	sts	0x00E8, r24
+ 68a:	4b c0       	rjmp	.+150    	; 0x722 <__vector_11+0x324>
+						UEDATX = keyboard_keys[i];
+					}
+					usb_send_in();
+					return;
+				}
+				if (bRequest == HID_GET_IDLE) {
+ 68c:	42 30       	cpi	r20, 0x02	; 2
+ 68e:	69 f4       	brne	.+26     	; 0x6aa <__vector_11+0x2ac>
+
+
+// Misc functions to wait for ready and send/receive packets
+static inline void usb_wait_in_ready(void)
+{
+	while (!(UEINTX & (1<<TXINI))) ;
+ 690:	e8 ee       	ldi	r30, 0xE8	; 232
+ 692:	f0 e0       	ldi	r31, 0x00	; 0
+ 694:	80 81       	ld	r24, Z
+ 696:	80 ff       	sbrs	r24, 0
+ 698:	fd cf       	rjmp	.-6      	; 0x694 <__vector_11+0x296>
+					usb_send_in();
+					return;
+				}
+				if (bRequest == HID_GET_IDLE) {
+					usb_wait_in_ready();
+					UEDATX = keyboard_idle_config;
+ 69a:	80 91 00 01 	lds	r24, 0x0100
+ 69e:	80 93 f1 00 	sts	0x00F1, r24
+{
+	while (!(UEINTX & (1<<TXINI))) ;
+}
+static inline void usb_send_in(void)
+{
+	UEINTX = ~(1<<TXINI);
+ 6a2:	8e ef       	ldi	r24, 0xFE	; 254
+ 6a4:	80 93 e8 00 	sts	0x00E8, r24
+ 6a8:	3c c0       	rjmp	.+120    	; 0x722 <__vector_11+0x324>
+					usb_wait_in_ready();
+					UEDATX = keyboard_idle_config;
+					usb_send_in();
+					return;
+				}
+				if (bRequest == HID_GET_PROTOCOL) {
+ 6aa:	43 30       	cpi	r20, 0x03	; 3
+ 6ac:	99 f5       	brne	.+102    	; 0x714 <__vector_11+0x316>
+
+
+// Misc functions to wait for ready and send/receive packets
+static inline void usb_wait_in_ready(void)
+{
+	while (!(UEINTX & (1<<TXINI))) ;
+ 6ae:	e8 ee       	ldi	r30, 0xE8	; 232
+ 6b0:	f0 e0       	ldi	r31, 0x00	; 0
+ 6b2:	80 81       	ld	r24, Z
+ 6b4:	80 ff       	sbrs	r24, 0
+ 6b6:	fd cf       	rjmp	.-6      	; 0x6b2 <__vector_11+0x2b4>
+					usb_send_in();
+					return;
+				}
+				if (bRequest == HID_GET_PROTOCOL) {
+					usb_wait_in_ready();
+					UEDATX = keyboard_protocol;
+ 6b8:	80 91 01 01 	lds	r24, 0x0101
+ 6bc:	80 93 f1 00 	sts	0x00F1, r24
+{
+	while (!(UEINTX & (1<<TXINI))) ;
+}
+static inline void usb_send_in(void)
+{
+	UEINTX = ~(1<<TXINI);
+ 6c0:	8e ef       	ldi	r24, 0xFE	; 254
+ 6c2:	80 93 e8 00 	sts	0x00E8, r24
+ 6c6:	2d c0       	rjmp	.+90     	; 0x722 <__vector_11+0x324>
+					UEDATX = keyboard_protocol;
+					usb_send_in();
+					return;
+				}
+			}
+			if (bmRequestType == 0x21) {
+ 6c8:	c1 32       	cpi	r28, 0x21	; 33
+ 6ca:	21 f5       	brne	.+72     	; 0x714 <__vector_11+0x316>
+				if (bRequest == HID_SET_REPORT) {
+ 6cc:	49 30       	cpi	r20, 0x09	; 9
+ 6ce:	81 f4       	brne	.+32     	; 0x6f0 <__vector_11+0x2f2>
+{
+	UEINTX = ~(1<<TXINI);
+}
+static inline void usb_wait_receive_out(void)
+{
+	while (!(UEINTX & (1<<RXOUTI))) ;
+ 6d0:	e8 ee       	ldi	r30, 0xE8	; 232
+ 6d2:	f0 e0       	ldi	r31, 0x00	; 0
+ 6d4:	80 81       	ld	r24, Z
+ 6d6:	82 ff       	sbrs	r24, 2
+ 6d8:	fd cf       	rjmp	.-6      	; 0x6d4 <__vector_11+0x2d6>
+				}
+			}
+			if (bmRequestType == 0x21) {
+				if (bRequest == HID_SET_REPORT) {
+					usb_wait_receive_out();
+					keyboard_leds = UEDATX;
+ 6da:	80 91 f1 00 	lds	r24, 0x00F1
+ 6de:	80 93 02 01 	sts	0x0102, r24
+{
+	while (!(UEINTX & (1<<RXOUTI))) ;
+}
+static inline void usb_ack_out(void)
+{
+	UEINTX = ~(1<<RXOUTI);
+ 6e2:	e8 ee       	ldi	r30, 0xE8	; 232
+ 6e4:	f0 e0       	ldi	r31, 0x00	; 0
+ 6e6:	8b ef       	ldi	r24, 0xFB	; 251
+ 6e8:	80 83       	st	Z, r24
+{
+	while (!(UEINTX & (1<<TXINI))) ;
+}
+static inline void usb_send_in(void)
+{
+	UEINTX = ~(1<<TXINI);
+ 6ea:	8e ef       	ldi	r24, 0xFE	; 254
+ 6ec:	80 83       	st	Z, r24
+ 6ee:	19 c0       	rjmp	.+50     	; 0x722 <__vector_11+0x324>
+					keyboard_leds = UEDATX;
+					usb_ack_out();
+					usb_send_in();
+					return;
+				}
+				if (bRequest == HID_SET_IDLE) {
+ 6f0:	4a 30       	cpi	r20, 0x0A	; 10
+ 6f2:	41 f4       	brne	.+16     	; 0x704 <__vector_11+0x306>
+					keyboard_idle_config = (wValue >> 8);
+ 6f4:	30 93 00 01 	sts	0x0100, r19
+					keyboard_idle_count = 0;
+ 6f8:	10 92 0b 01 	sts	0x010B, r1
+{
+	while (!(UEINTX & (1<<TXINI))) ;
+}
+static inline void usb_send_in(void)
+{
+	UEINTX = ~(1<<TXINI);
+ 6fc:	8e ef       	ldi	r24, 0xFE	; 254
+ 6fe:	80 93 e8 00 	sts	0x00E8, r24
+ 702:	0f c0       	rjmp	.+30     	; 0x722 <__vector_11+0x324>
+					keyboard_idle_config = (wValue >> 8);
+					keyboard_idle_count = 0;
+					usb_send_in();
+					return;
+				}
+				if (bRequest == HID_SET_PROTOCOL) {
+ 704:	4b 30       	cpi	r20, 0x0B	; 11
+ 706:	31 f4       	brne	.+12     	; 0x714 <__vector_11+0x316>
+					keyboard_protocol = wValue;
+ 708:	20 93 01 01 	sts	0x0101, r18
+{
+	while (!(UEINTX & (1<<TXINI))) ;
+}
+static inline void usb_send_in(void)
+{
+	UEINTX = ~(1<<TXINI);
+ 70c:	8e ef       	ldi	r24, 0xFE	; 254
+ 70e:	80 93 e8 00 	sts	0x00E8, r24
+ 712:	07 c0       	rjmp	.+14     	; 0x722 <__vector_11+0x324>
+					return;
+				}
+			}
+		}
+	}
+	UECONX = (1<<STALLRQ) | (1<<EPEN);	// stall
+ 714:	81 e2       	ldi	r24, 0x21	; 33
+ 716:	80 93 eb 00 	sts	0x00EB, r24
+ 71a:	03 c0       	rjmp	.+6      	; 0x722 <__vector_11+0x324>
+{
+	while (!(UEINTX & (1<<TXINI))) ;
+}
+static inline void usb_send_in(void)
+{
+	UEINTX = ~(1<<TXINI);
+ 71c:	78 83       	st	Y, r23
+				for (i = n; i; i--) {
+					UEDATX = pgm_read_byte(desc_addr++);
+				}
+				len -= n;
+				usb_send_in();
+			} while (len || n == ENDPOINT0_SIZE);
+ 71e:	61 11       	cpse	r22, r1
+ 720:	d9 ce       	rjmp	.-590    	; 0x4d4 <__vector_11+0xd6>
+				}
+			}
+		}
+	}
+	UECONX = (1<<STALLRQ) | (1<<EPEN);	// stall
+}
+ 722:	ff 91       	pop	r31
+ 724:	ef 91       	pop	r30
+ 726:	df 91       	pop	r29
+ 728:	cf 91       	pop	r28
+ 72a:	bf 91       	pop	r27
+ 72c:	af 91       	pop	r26
+ 72e:	9f 91       	pop	r25
+ 730:	8f 91       	pop	r24
+ 732:	7f 91       	pop	r23
+ 734:	6f 91       	pop	r22
+ 736:	5f 91       	pop	r21
+ 738:	4f 91       	pop	r20
+ 73a:	3f 91       	pop	r19
+ 73c:	2f 91       	pop	r18
+ 73e:	1f 91       	pop	r17
+ 740:	0f 91       	pop	r16
+ 742:	0f 90       	pop	r0
+ 744:	0f be       	out	0x3f, r0	; 63
+ 746:	0f 90       	pop	r0
+ 748:	1f 90       	pop	r1
+ 74a:	18 95       	reti
+
+0000074c <_exit>:
+ 74c:	f8 94       	cli
+
+0000074e <__stop_program>:
+ 74e:	ff cf       	rjmp	.-2      	; 0x74e <__stop_program>

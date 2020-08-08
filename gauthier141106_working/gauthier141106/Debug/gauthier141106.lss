@@ -1,0 +1,753 @@
+
+gauthier141106.elf:     file format elf32-avr
+
+Sections:
+Idx Name          Size      VMA       LMA       File off  Algn
+  0 .text         0000035c  00000000  00000000  00000094  2**1
+                  CONTENTS, ALLOC, LOAD, READONLY, CODE
+  1 .data         00000000  00800060  0000035c  000003f0  2**0
+                  CONTENTS, ALLOC, LOAD, DATA
+  2 .bss          0000000e  00800060  00800060  000003f0  2**0
+                  ALLOC
+  3 .stab         000006b4  00000000  00000000  000003f0  2**2
+                  CONTENTS, READONLY, DEBUGGING
+  4 .stabstr      00000097  00000000  00000000  00000aa4  2**0
+                  CONTENTS, READONLY, DEBUGGING
+  5 .comment      0000002f  00000000  00000000  00000b3b  2**0
+                  CONTENTS, READONLY
+  6 .debug_aranges 00000048  00000000  00000000  00000b6a  2**0
+                  CONTENTS, READONLY, DEBUGGING
+  7 .debug_info   000006a5  00000000  00000000  00000bb2  2**0
+                  CONTENTS, READONLY, DEBUGGING
+  8 .debug_abbrev 000001f2  00000000  00000000  00001257  2**0
+                  CONTENTS, READONLY, DEBUGGING
+  9 .debug_line   0000033c  00000000  00000000  00001449  2**0
+                  CONTENTS, READONLY, DEBUGGING
+ 10 .debug_frame  00000084  00000000  00000000  00001788  2**2
+                  CONTENTS, READONLY, DEBUGGING
+ 11 .debug_str    000001ad  00000000  00000000  0000180c  2**0
+                  CONTENTS, READONLY, DEBUGGING
+ 12 .debug_loc    00000310  00000000  00000000  000019b9  2**0
+                  CONTENTS, READONLY, DEBUGGING
+ 13 .debug_ranges 00000038  00000000  00000000  00001cc9  2**0
+                  CONTENTS, READONLY, DEBUGGING
+
+Disassembly of section .text:
+
+00000000 <__vectors>:
+   0:	12 c0       	rjmp	.+36     	; 0x26 <__ctors_end>
+   2:	1f c0       	rjmp	.+62     	; 0x42 <__bad_interrupt>
+   4:	1e c0       	rjmp	.+60     	; 0x42 <__bad_interrupt>
+   6:	1d c0       	rjmp	.+58     	; 0x42 <__bad_interrupt>
+   8:	1c c0       	rjmp	.+56     	; 0x42 <__bad_interrupt>
+   a:	1b c0       	rjmp	.+54     	; 0x42 <__bad_interrupt>
+   c:	1a c0       	rjmp	.+52     	; 0x42 <__bad_interrupt>
+   e:	19 c0       	rjmp	.+50     	; 0x42 <__bad_interrupt>
+  10:	18 c0       	rjmp	.+48     	; 0x42 <__bad_interrupt>
+  12:	17 c0       	rjmp	.+46     	; 0x42 <__bad_interrupt>
+  14:	16 c0       	rjmp	.+44     	; 0x42 <__bad_interrupt>
+  16:	15 c0       	rjmp	.+42     	; 0x42 <__bad_interrupt>
+  18:	14 c0       	rjmp	.+40     	; 0x42 <__bad_interrupt>
+  1a:	13 c0       	rjmp	.+38     	; 0x42 <__bad_interrupt>
+  1c:	12 c0       	rjmp	.+36     	; 0x42 <__bad_interrupt>
+  1e:	11 c0       	rjmp	.+34     	; 0x42 <__bad_interrupt>
+  20:	10 c0       	rjmp	.+32     	; 0x42 <__bad_interrupt>
+  22:	0f c0       	rjmp	.+30     	; 0x42 <__bad_interrupt>
+  24:	0e c0       	rjmp	.+28     	; 0x42 <__bad_interrupt>
+
+00000026 <__ctors_end>:
+  26:	11 24       	eor	r1, r1
+  28:	1f be       	out	0x3f, r1	; 63
+  2a:	cf ed       	ldi	r28, 0xDF	; 223
+  2c:	cd bf       	out	0x3d, r28	; 61
+
+0000002e <__do_clear_bss>:
+  2e:	20 e0       	ldi	r18, 0x00	; 0
+  30:	a0 e6       	ldi	r26, 0x60	; 96
+  32:	b0 e0       	ldi	r27, 0x00	; 0
+  34:	01 c0       	rjmp	.+2      	; 0x38 <.do_clear_bss_start>
+
+00000036 <.do_clear_bss_loop>:
+  36:	1d 92       	st	X+, r1
+
+00000038 <.do_clear_bss_start>:
+  38:	ae 36       	cpi	r26, 0x6E	; 110
+  3a:	b2 07       	cpc	r27, r18
+  3c:	e1 f7       	brne	.-8      	; 0x36 <.do_clear_bss_loop>
+  3e:	7f d0       	rcall	.+254    	; 0x13e <main>
+  40:	8b c1       	rjmp	.+790    	; 0x358 <_exit>
+
+00000042 <__bad_interrupt>:
+  42:	de cf       	rjmp	.-68     	; 0x0 <__vectors>
+
+00000044 <estop.part.0>:
+
+uint16_t rounds=0;
+
+void estop(uint8_t state)
+{
+	if(state)	PORTD &= ~ESTOP;
+  44:	90 98       	cbi	0x12, 0	; 18
+  46:	08 95       	ret
+
+00000048 <estop>:
+  48:	81 11       	cpse	r24, r1
+  4a:	fc cf       	rjmp	.-8      	; 0x44 <estop.part.0>
+	else 		PORTD |=  ESTOP;
+  4c:	90 9a       	sbi	0x12, 0	; 18
+  4e:	08 95       	ret
+
+00000050 <buzzz>:
+}
+
+void buzzz(uint16_t ms)
+{
+	for(uint16_t i=0; i<(ms<<2); i++)
+  50:	88 0f       	add	r24, r24
+  52:	99 1f       	adc	r25, r25
+  54:	88 0f       	add	r24, r24
+  56:	99 1f       	adc	r25, r25
+  58:	20 e0       	ldi	r18, 0x00	; 0
+  5a:	30 e0       	ldi	r19, 0x00	; 0
+  5c:	07 c0       	rjmp	.+14     	; 0x6c <buzzz+0x1c>
+	{
+		PIND |= BUZZZ;
+  5e:	81 9a       	sbi	0x10, 1	; 16
+	#else
+		//round up by default
+		__ticks_dc = (uint32_t)(ceil(fabs(__tmp)));
+	#endif
+
+	__builtin_avr_delay_cycles(__ticks_dc);
+  60:	e2 e7       	ldi	r30, 0x72	; 114
+  62:	f1 e0       	ldi	r31, 0x01	; 1
+  64:	31 97       	sbiw	r30, 0x01	; 1
+  66:	f1 f7       	brne	.-4      	; 0x64 <buzzz+0x14>
+	else 		PORTD |=  ESTOP;
+}
+
+void buzzz(uint16_t ms)
+{
+	for(uint16_t i=0; i<(ms<<2); i++)
+  68:	2f 5f       	subi	r18, 0xFF	; 255
+  6a:	3f 4f       	sbci	r19, 0xFF	; 255
+  6c:	28 17       	cp	r18, r24
+  6e:	39 07       	cpc	r19, r25
+  70:	b1 f7       	brne	.-20     	; 0x5e <buzzz+0xe>
+	{
+		PIND |= BUZZZ;
+		_delay_us(250);
+	}
+	PORTD &= ~BUZZZ;
+  72:	91 98       	cbi	0x12, 1	; 18
+  74:	08 95       	ret
+
+00000076 <leds.part.1>:
+}
+
+void leds(uint8_t led, uint8_t show)
+  76:	cf 93       	push	r28
+  78:	c8 2f       	mov	r28, r24
+		PORTD &= ~led;
+		buzzz(50);
+	}
+	else if(show == ALARM)
+	{	
+		buzzz(50);
+  7a:	82 e3       	ldi	r24, 0x32	; 50
+  7c:	90 e0       	ldi	r25, 0x00	; 0
+  7e:	e8 df       	rcall	.-48     	; 0x50 <buzzz>
+	#else
+		//round up by default
+		__ticks_dc = (uint32_t)(ceil(fabs(__tmp)));
+	#endif
+
+	__builtin_avr_delay_cycles(__ticks_dc);
+  80:	2f e4       	ldi	r18, 0x4F	; 79
+  82:	3d e9       	ldi	r19, 0x9D	; 157
+  84:	83 e0       	ldi	r24, 0x03	; 3
+  86:	21 50       	subi	r18, 0x01	; 1
+  88:	30 40       	sbci	r19, 0x00	; 0
+  8a:	80 40       	sbci	r24, 0x00	; 0
+  8c:	e1 f7       	brne	.-8      	; 0x86 <leds.part.1+0x10>
+  8e:	00 c0       	rjmp	.+0      	; 0x90 <leds.part.1+0x1a>
+  90:	00 00       	nop
+		_delay_ms(200);
+		buzzz(250);
+  92:	8a ef       	ldi	r24, 0xFA	; 250
+  94:	90 e0       	ldi	r25, 0x00	; 0
+  96:	dc df       	rcall	.-72     	; 0x50 <buzzz>
+  98:	9f e0       	ldi	r25, 0x0F	; 15
+  9a:	eb ed       	ldi	r30, 0xDB	; 219
+  9c:	f7 e1       	ldi	r31, 0x17	; 23
+  9e:	91 50       	subi	r25, 0x01	; 1
+  a0:	e0 40       	sbci	r30, 0x00	; 0
+  a2:	f0 40       	sbci	r31, 0x00	; 0
+  a4:	e1 f7       	brne	.-8      	; 0x9e <leds.part.1+0x28>
+  a6:	00 c0       	rjmp	.+0      	; 0xa8 <leds.part.1+0x32>
+  a8:	00 00       	nop
+		_delay_ms(1320);
+		PORTD |= led;
+  aa:	82 b3       	in	r24, 0x12	; 18
+  ac:	8c 2b       	or	r24, r28
+  ae:	82 bb       	out	0x12, r24	; 18
+  b0:	83 e5       	ldi	r24, 0x53	; 83
+  b2:	97 ee       	ldi	r25, 0xE7	; 231
+  b4:	01 97       	sbiw	r24, 0x01	; 1
+  b6:	f1 f7       	brne	.-4      	; 0xb4 <leds.part.1+0x3e>
+  b8:	00 c0       	rjmp	.+0      	; 0xba <leds.part.1+0x44>
+  ba:	00 00       	nop
+		_delay_ms(40);
+		PORTD &= ~led;
+  bc:	82 b3       	in	r24, 0x12	; 18
+  be:	9c 2f       	mov	r25, r28
+  c0:	90 95       	com	r25
+  c2:	89 23       	and	r24, r25
+  c4:	82 bb       	out	0x12, r24	; 18
+  c6:	e7 ea       	ldi	r30, 0xA7	; 167
+  c8:	fe ec       	ldi	r31, 0xCE	; 206
+  ca:	21 e0       	ldi	r18, 0x01	; 1
+  cc:	e1 50       	subi	r30, 0x01	; 1
+  ce:	f0 40       	sbci	r31, 0x00	; 0
+  d0:	20 40       	sbci	r18, 0x00	; 0
+  d2:	e1 f7       	brne	.-8      	; 0xcc <leds.part.1+0x56>
+  d4:	00 c0       	rjmp	.+0      	; 0xd6 <leds.part.1+0x60>
+  d6:	00 00       	nop
+		_delay_ms(100);
+		PORTD |= led;
+  d8:	82 b3       	in	r24, 0x12	; 18
+  da:	8c 2b       	or	r24, r28
+  dc:	82 bb       	out	0x12, r24	; 18
+  de:	e3 e5       	ldi	r30, 0x53	; 83
+  e0:	f7 ee       	ldi	r31, 0xE7	; 231
+  e2:	31 97       	sbiw	r30, 0x01	; 1
+  e4:	f1 f7       	brne	.-4      	; 0xe2 <__stack+0x3>
+  e6:	00 c0       	rjmp	.+0      	; 0xe8 <__stack+0x9>
+  e8:	00 00       	nop
+		_delay_ms(40);
+		PORTD &= ~led;
+  ea:	82 b3       	in	r24, 0x12	; 18
+  ec:	89 23       	and	r24, r25
+  ee:	82 bb       	out	0x12, r24	; 18
+	}
+	else;
+}
+  f0:	cf 91       	pop	r28
+  f2:	08 95       	ret
+
+000000f4 <leds>:
+	}
+	PORTD &= ~BUZZZ;
+}
+
+void leds(uint8_t led, uint8_t show)
+{
+  f4:	cf 93       	push	r28
+  f6:	c8 2f       	mov	r28, r24
+	if(show == ON) 			PORTD |=  led;
+  f8:	61 30       	cpi	r22, 0x01	; 1
+  fa:	21 f4       	brne	.+8      	; 0x104 <leds+0x10>
+  fc:	82 b3       	in	r24, 0x12	; 18
+  fe:	8c 2b       	or	r24, r28
+ 100:	82 bb       	out	0x12, r24	; 18
+ 102:	1b c0       	rjmp	.+54     	; 0x13a <leds+0x46>
+	else if(show == OFF)	PORTD &= ~led;
+ 104:	61 11       	cpse	r22, r1
+ 106:	05 c0       	rjmp	.+10     	; 0x112 <leds+0x1e>
+ 108:	82 b3       	in	r24, 0x12	; 18
+ 10a:	c0 95       	com	r28
+ 10c:	c8 23       	and	r28, r24
+ 10e:	c2 bb       	out	0x12, r28	; 18
+ 110:	14 c0       	rjmp	.+40     	; 0x13a <leds+0x46>
+	else if(show == BLINK)
+ 112:	62 30       	cpi	r22, 0x02	; 2
+ 114:	71 f4       	brne	.+28     	; 0x132 <leds+0x3e>
+	{
+		PORTD |= led;
+ 116:	82 b3       	in	r24, 0x12	; 18
+ 118:	8c 2b       	or	r24, r28
+ 11a:	82 bb       	out	0x12, r24	; 18
+		buzzz(50);
+ 11c:	82 e3       	ldi	r24, 0x32	; 50
+ 11e:	90 e0       	ldi	r25, 0x00	; 0
+ 120:	97 df       	rcall	.-210    	; 0x50 <buzzz>
+		PORTD &= ~led;
+ 122:	82 b3       	in	r24, 0x12	; 18
+ 124:	c0 95       	com	r28
+ 126:	c8 23       	and	r28, r24
+ 128:	c2 bb       	out	0x12, r28	; 18
+		buzzz(50);
+ 12a:	82 e3       	ldi	r24, 0x32	; 50
+ 12c:	90 e0       	ldi	r25, 0x00	; 0
+		PORTD |= led;
+		_delay_ms(40);
+		PORTD &= ~led;
+	}
+	else;
+}
+ 12e:	cf 91       	pop	r28
+	else if(show == BLINK)
+	{
+		PORTD |= led;
+		buzzz(50);
+		PORTD &= ~led;
+		buzzz(50);
+ 130:	8f cf       	rjmp	.-226    	; 0x50 <buzzz>
+	}
+	else if(show == ALARM)
+ 132:	63 30       	cpi	r22, 0x03	; 3
+ 134:	11 f4       	brne	.+4      	; 0x13a <leds+0x46>
+		PORTD |= led;
+		_delay_ms(40);
+		PORTD &= ~led;
+	}
+	else;
+}
+ 136:	cf 91       	pop	r28
+ 138:	9e cf       	rjmp	.-196    	; 0x76 <leds.part.1>
+ 13a:	cf 91       	pop	r28
+ 13c:	08 95       	ret
+
+0000013e <main>:
+
+int main(void)
+{
+	//Initialisation Outputs
+	estop(OFF); // ESTOP 
+ 13e:	80 e0       	ldi	r24, 0x00	; 0
+ 140:	83 df       	rcall	.-250    	; 0x48 <estop>
+	DDRD  |=  (ESTOP | BUZZZ | XMLED | YMLED | ZMLED | STLED);
+ 142:	81 b3       	in	r24, 0x11	; 17
+ 144:	8f 63       	ori	r24, 0x3F	; 63
+ 146:	81 bb       	out	0x11, r24	; 17
+	//estop(OFF);
+	PORTD &= ~(BUZZZ | XMLED | YMLED | ZMLED | STLED);
+ 148:	82 b3       	in	r24, 0x12	; 18
+ 14a:	81 7c       	andi	r24, 0xC1	; 193
+ 14c:	82 bb       	out	0x12, r24	; 18
+	//Initialisation PULLUPS Inputs
+	DDRB  &= ~(DIRXX | DB25X | DIRYY | DB25Y | DIRZZ | DB25Z | PHOTX | PHOTY);
+ 14e:	87 b3       	in	r24, 0x17	; 23
+ 150:	17 ba       	out	0x17, r1	; 23
+	PORTB |=  (DIRXX | DB25X | DIRYY | DB25Y | DIRZZ | DB25Z | PHOTX | PHOTY);
+ 152:	88 b3       	in	r24, 0x18	; 24
+ 154:	8f ef       	ldi	r24, 0xFF	; 255
+ 156:	88 bb       	out	0x18, r24	; 24
+	DDRD  &= ~(PHOTZ);
+ 158:	8e 98       	cbi	0x11, 6	; 17
+	PORTD |=   PHOTZ;
+ 15a:	96 9a       	sbi	0x12, 6	; 18
+ 15c:	c4 e0       	ldi	r28, 0x04	; 4
+
+	for(uint8_t i=0; i<4; i++) leds((XMLED | YMLED | ZMLED | STLED), BLINK);
+ 15e:	62 e0       	ldi	r22, 0x02	; 2
+ 160:	8c e3       	ldi	r24, 0x3C	; 60
+ 162:	c8 df       	rcall	.-112    	; 0xf4 <leds>
+ 164:	c1 50       	subi	r28, 0x01	; 1
+ 166:	d9 f7       	brne	.-10     	; 0x15e <main+0x20>
+		//XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+		if((PINB & DB25X) && !soll_x)
+		{
+			//LOW to HIGH on DB25X
+			PORTB |= DB25X; //Pullups ON for Hysterese
+			soll_x = 1;
+ 168:	21 e0       	ldi	r18, 0x01	; 1
+	for(uint8_t i=0; i<4; i++) leds((XMLED | YMLED | ZMLED | STLED), BLINK);
+	
+	while(1)
+	{
+		//Toggle HEART (heartbeatsign for debugging)
+		rounds++;
+ 16a:	80 91 60 00 	lds	r24, 0x0060
+ 16e:	90 91 61 00 	lds	r25, 0x0061
+ 172:	01 96       	adiw	r24, 0x01	; 1
+ 174:	90 93 61 00 	sts	0x0061, r25
+ 178:	80 93 60 00 	sts	0x0060, r24
+		if (!rounds) PIND |= STLED;
+ 17c:	89 2b       	or	r24, r25
+ 17e:	09 f4       	brne	.+2      	; 0x182 <main+0x44>
+ 180:	85 9a       	sbi	0x10, 5	; 16
+
+		//XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+		// B E G I N
+		//XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+		if((PINB & DB25X) && !soll_x)
+ 182:	b6 9b       	sbis	0x16, 6	; 22
+ 184:	08 c0       	rjmp	.+16     	; 0x196 <main+0x58>
+ 186:	80 91 6d 00 	lds	r24, 0x006D
+ 18a:	81 11       	cpse	r24, r1
+ 18c:	04 c0       	rjmp	.+8      	; 0x196 <main+0x58>
+		{
+			//LOW to HIGH on DB25X
+			PORTB |= DB25X; //Pullups ON for Hysterese
+ 18e:	c6 9a       	sbi	0x18, 6	; 24
+			soll_x = 1;
+ 190:	20 93 6d 00 	sts	0x006D, r18
+ 194:	09 c0       	rjmp	.+18     	; 0x1a8 <main+0x6a>
+			cnt_x  = (PINB & DIRXX)? cnt_x +1 : cnt_x -1;
+		}
+
+		else if(!(PINB & DB25X) && soll_x)
+ 196:	b6 99       	sbic	0x16, 6	; 22
+ 198:	10 c0       	rjmp	.+32     	; 0x1ba <main+0x7c>
+ 19a:	80 91 6d 00 	lds	r24, 0x006D
+ 19e:	88 23       	and	r24, r24
+ 1a0:	61 f0       	breq	.+24     	; 0x1ba <main+0x7c>
+		{
+			//HIGH to LOW on DB25X
+			PORTB &= ~DB25X; //Pullups OFF
+ 1a2:	c6 98       	cbi	0x18, 6	; 24
+			soll_x = 0;
+ 1a4:	10 92 6d 00 	sts	0x006D, r1
+ 1a8:	80 91 67 00 	lds	r24, 0x0067
+			cnt_x  = (PINB & DIRXX)? cnt_x +1 : cnt_x -1;
+ 1ac:	b7 9b       	sbis	0x16, 7	; 22
+ 1ae:	02 c0       	rjmp	.+4      	; 0x1b4 <main+0x76>
+ 1b0:	8f 5f       	subi	r24, 0xFF	; 255
+ 1b2:	01 c0       	rjmp	.+2      	; 0x1b6 <main+0x78>
+ 1b4:	81 50       	subi	r24, 0x01	; 1
+ 1b6:	80 93 67 00 	sts	0x0067, r24
+		{
+			//No change on DB25X
+			;
+		}
+
+		if((PINB & PHOTX) && !ist_x)
+ 1ba:	b1 9b       	sbis	0x16, 1	; 22
+ 1bc:	0e c0       	rjmp	.+28     	; 0x1da <main+0x9c>
+ 1be:	80 91 6a 00 	lds	r24, 0x006A
+ 1c2:	81 11       	cpse	r24, r1
+ 1c4:	0a c0       	rjmp	.+20     	; 0x1da <main+0x9c>
+		{
+			//LIGHT to DARK on PHOTX
+			PORTB |= PHOTX; //Pullups ON for Hysterese
+ 1c6:	c1 9a       	sbi	0x18, 1	; 24
+			ist_x  = 1;
+ 1c8:	20 93 6a 00 	sts	0x006A, r18
+			move_x++;
+ 1cc:	80 91 64 00 	lds	r24, 0x0064
+ 1d0:	8f 5f       	subi	r24, 0xFF	; 255
+ 1d2:	80 93 64 00 	sts	0x0064, r24
+}
+
+void leds(uint8_t led, uint8_t show)
+{
+	if(show == ON) 			PORTD |=  led;
+	else if(show == OFF)	PORTD &= ~led;
+ 1d6:	92 98       	cbi	0x12, 2	; 18
+ 1d8:	0f c0       	rjmp	.+30     	; 0x1f8 <main+0xba>
+			ist_x  = 1;
+			move_x++;
+			leds(XMLED, OFF);
+		}
+
+		else if(!(PINB & PHOTX) && ist_x)
+ 1da:	b1 99       	sbic	0x16, 1	; 22
+ 1dc:	0d c0       	rjmp	.+26     	; 0x1f8 <main+0xba>
+ 1de:	80 91 6a 00 	lds	r24, 0x006A
+ 1e2:	88 23       	and	r24, r24
+ 1e4:	49 f0       	breq	.+18     	; 0x1f8 <main+0xba>
+		{
+			//DARK to LIGHT on PHOTX
+			PORTB &= ~PHOTX; //Pullups OFF
+ 1e6:	c1 98       	cbi	0x18, 1	; 24
+			ist_x  = 0;
+ 1e8:	10 92 6a 00 	sts	0x006A, r1
+			move_x++;
+ 1ec:	80 91 64 00 	lds	r24, 0x0064
+ 1f0:	8f 5f       	subi	r24, 0xFF	; 255
+ 1f2:	80 93 64 00 	sts	0x0064, r24
+	PORTD &= ~BUZZZ;
+}
+
+void leds(uint8_t led, uint8_t show)
+{
+	if(show == ON) 			PORTD |=  led;
+ 1f6:	92 9a       	sbi	0x12, 2	; 18
+		{
+			//No change on PHOTX
+			;
+		}
+
+		if(move_x >= 2)
+ 1f8:	80 91 64 00 	lds	r24, 0x0064
+ 1fc:	82 30       	cpi	r24, 0x02	; 2
+ 1fe:	20 f0       	brcs	.+8      	; 0x208 <main+0xca>
+		{
+			move_x = 0;
+ 200:	10 92 64 00 	sts	0x0064, r1
+			cnt_x  = 0;
+ 204:	10 92 67 00 	sts	0x0067, r1
+		}
+
+		if((cnt_x > XTH) || (cnt_x < 0-XTH))
+ 208:	80 91 67 00 	lds	r24, 0x0067
+ 20c:	86 5f       	subi	r24, 0xF6	; 246
+ 20e:	85 31       	cpi	r24, 0x15	; 21
+ 210:	30 f0       	brcs	.+12     	; 0x21e <main+0xe0>
+		{
+			cnt_x = 0;
+ 212:	10 92 67 00 	sts	0x0067, r1
+ 216:	16 df       	rcall	.-468    	; 0x44 <estop.part.0>
+ 218:	84 e0       	ldi	r24, 0x04	; 4
+ 21a:	2d df       	rcall	.-422    	; 0x76 <leds.part.1>
+ 21c:	fd cf       	rjmp	.-6      	; 0x218 <main+0xda>
+		}
+
+		//YYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYY
+		// B E G I N
+		//YYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYY
+		if((PINB & DB25Y) && !soll_y)
+ 21e:	b4 9b       	sbis	0x16, 4	; 22
+ 220:	08 c0       	rjmp	.+16     	; 0x232 <main+0xf4>
+ 222:	80 91 6c 00 	lds	r24, 0x006C
+ 226:	81 11       	cpse	r24, r1
+ 228:	04 c0       	rjmp	.+8      	; 0x232 <main+0xf4>
+		{
+			//LOW to HIGH on DB25X
+			PORTB |= DB25Y; //Pullups ON for Hysterese
+ 22a:	c4 9a       	sbi	0x18, 4	; 24
+			soll_y = 1;
+ 22c:	20 93 6c 00 	sts	0x006C, r18
+ 230:	09 c0       	rjmp	.+18     	; 0x244 <main+0x106>
+			cnt_y  = (PINB & DIRYY)? cnt_y +1 : cnt_y -1;
+		}
+
+		else if(!(PINB & DB25Y) && soll_y)
+ 232:	b4 99       	sbic	0x16, 4	; 22
+ 234:	10 c0       	rjmp	.+32     	; 0x256 <main+0x118>
+ 236:	80 91 6c 00 	lds	r24, 0x006C
+ 23a:	88 23       	and	r24, r24
+ 23c:	61 f0       	breq	.+24     	; 0x256 <main+0x118>
+		{
+			//HIGH to LOW on DB25X
+			PORTB &= ~DB25Y; //Pullups OFF
+ 23e:	c4 98       	cbi	0x18, 4	; 24
+			soll_y = 0;
+ 240:	10 92 6c 00 	sts	0x006C, r1
+ 244:	80 91 66 00 	lds	r24, 0x0066
+			cnt_y  = (PINB & DIRYY)? cnt_y +1 : cnt_y -1;
+ 248:	b5 9b       	sbis	0x16, 5	; 22
+ 24a:	02 c0       	rjmp	.+4      	; 0x250 <main+0x112>
+ 24c:	8f 5f       	subi	r24, 0xFF	; 255
+ 24e:	01 c0       	rjmp	.+2      	; 0x252 <main+0x114>
+ 250:	81 50       	subi	r24, 0x01	; 1
+ 252:	80 93 66 00 	sts	0x0066, r24
+		{
+			//No change on DB25Y
+			;
+		}
+
+		if((PINB & PHOTY) && !ist_y)
+ 256:	b0 9b       	sbis	0x16, 0	; 22
+ 258:	0e c0       	rjmp	.+28     	; 0x276 <main+0x138>
+ 25a:	80 91 69 00 	lds	r24, 0x0069
+ 25e:	81 11       	cpse	r24, r1
+ 260:	0a c0       	rjmp	.+20     	; 0x276 <main+0x138>
+		{
+			//LIGHT to DARK on PHOTY
+			PORTB |= PHOTY; //Pullups ON for Hysterese
+ 262:	c0 9a       	sbi	0x18, 0	; 24
+			ist_y  = 1;
+ 264:	20 93 69 00 	sts	0x0069, r18
+			move_y++;
+ 268:	80 91 63 00 	lds	r24, 0x0063
+ 26c:	8f 5f       	subi	r24, 0xFF	; 255
+ 26e:	80 93 63 00 	sts	0x0063, r24
+}
+
+void leds(uint8_t led, uint8_t show)
+{
+	if(show == ON) 			PORTD |=  led;
+	else if(show == OFF)	PORTD &= ~led;
+ 272:	93 98       	cbi	0x12, 3	; 18
+ 274:	0f c0       	rjmp	.+30     	; 0x294 <main+0x156>
+			ist_y  = 1;
+			move_y++;
+			leds(YMLED, OFF);
+		}
+
+		else if(!(PINB & PHOTY) && ist_y)
+ 276:	b0 99       	sbic	0x16, 0	; 22
+ 278:	0d c0       	rjmp	.+26     	; 0x294 <main+0x156>
+ 27a:	80 91 69 00 	lds	r24, 0x0069
+ 27e:	88 23       	and	r24, r24
+ 280:	49 f0       	breq	.+18     	; 0x294 <main+0x156>
+		{
+			//DARK to LIGHT on PHOTY
+			PORTB &= ~PHOTY; //Pullups OFF
+ 282:	c0 98       	cbi	0x18, 0	; 24
+			ist_y  = 0;
+ 284:	10 92 69 00 	sts	0x0069, r1
+			move_y++;
+ 288:	80 91 63 00 	lds	r24, 0x0063
+ 28c:	8f 5f       	subi	r24, 0xFF	; 255
+ 28e:	80 93 63 00 	sts	0x0063, r24
+	PORTD &= ~BUZZZ;
+}
+
+void leds(uint8_t led, uint8_t show)
+{
+	if(show == ON) 			PORTD |=  led;
+ 292:	93 9a       	sbi	0x12, 3	; 18
+		{
+			//No change on PHOTX
+			;
+		}
+
+		if(move_y >= 2)
+ 294:	80 91 63 00 	lds	r24, 0x0063
+ 298:	82 30       	cpi	r24, 0x02	; 2
+ 29a:	20 f0       	brcs	.+8      	; 0x2a4 <main+0x166>
+		{
+			move_y = 0;
+ 29c:	10 92 63 00 	sts	0x0063, r1
+			cnt_y  = 0;
+ 2a0:	10 92 66 00 	sts	0x0066, r1
+		}
+
+		if((cnt_y > YTH) || (cnt_y < 0-YTH))
+ 2a4:	80 91 66 00 	lds	r24, 0x0066
+ 2a8:	88 5e       	subi	r24, 0xE8	; 232
+ 2aa:	81 33       	cpi	r24, 0x31	; 49
+ 2ac:	30 f0       	brcs	.+12     	; 0x2ba <main+0x17c>
+		{
+			cnt_y = 0;
+ 2ae:	10 92 66 00 	sts	0x0066, r1
+ 2b2:	c8 de       	rcall	.-624    	; 0x44 <estop.part.0>
+ 2b4:	88 e0       	ldi	r24, 0x08	; 8
+ 2b6:	df de       	rcall	.-578    	; 0x76 <leds.part.1>
+ 2b8:	fd cf       	rjmp	.-6      	; 0x2b4 <main+0x176>
+		}		
+		
+		//ZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZ
+		// B E G I N
+		//ZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZ
+		if((PINB & DB25Z) && !soll_z)
+ 2ba:	b2 9b       	sbis	0x16, 2	; 22
+ 2bc:	08 c0       	rjmp	.+16     	; 0x2ce <main+0x190>
+ 2be:	80 91 6b 00 	lds	r24, 0x006B
+ 2c2:	81 11       	cpse	r24, r1
+ 2c4:	04 c0       	rjmp	.+8      	; 0x2ce <main+0x190>
+		{
+			//LOW to HIGH on DB25X
+			PORTB |= DB25Z; //Pullups ON for Hysterese
+ 2c6:	c2 9a       	sbi	0x18, 2	; 24
+			soll_z = 1;
+ 2c8:	20 93 6b 00 	sts	0x006B, r18
+ 2cc:	09 c0       	rjmp	.+18     	; 0x2e0 <main+0x1a2>
+			cnt_z  = (PINB & DIRZZ)? cnt_z +1 : cnt_z -1;
+		}
+
+		else if(!(PINB & DB25Z) && soll_z)
+ 2ce:	b2 99       	sbic	0x16, 2	; 22
+ 2d0:	10 c0       	rjmp	.+32     	; 0x2f2 <main+0x1b4>
+ 2d2:	80 91 6b 00 	lds	r24, 0x006B
+ 2d6:	88 23       	and	r24, r24
+ 2d8:	61 f0       	breq	.+24     	; 0x2f2 <main+0x1b4>
+		{
+			//HIGH to LOW on DB25X
+			PORTB &= ~DB25Z; //Pullups OFF
+ 2da:	c2 98       	cbi	0x18, 2	; 24
+			soll_z = 0;
+ 2dc:	10 92 6b 00 	sts	0x006B, r1
+ 2e0:	80 91 65 00 	lds	r24, 0x0065
+			cnt_z  = (PINB & DIRZZ)? cnt_z +1 : cnt_z -1;
+ 2e4:	b3 9b       	sbis	0x16, 3	; 22
+ 2e6:	02 c0       	rjmp	.+4      	; 0x2ec <main+0x1ae>
+ 2e8:	8f 5f       	subi	r24, 0xFF	; 255
+ 2ea:	01 c0       	rjmp	.+2      	; 0x2ee <main+0x1b0>
+ 2ec:	81 50       	subi	r24, 0x01	; 1
+ 2ee:	80 93 65 00 	sts	0x0065, r24
+		{
+			//No change on DB25Z
+			;
+		}
+
+		if((PIND & PHOTZ) && !ist_z)
+ 2f2:	86 9b       	sbis	0x10, 6	; 16
+ 2f4:	0e c0       	rjmp	.+28     	; 0x312 <main+0x1d4>
+ 2f6:	80 91 68 00 	lds	r24, 0x0068
+ 2fa:	81 11       	cpse	r24, r1
+ 2fc:	0a c0       	rjmp	.+20     	; 0x312 <main+0x1d4>
+		{
+			//LIGHT to DARK on PHOTX
+			PORTD |= PHOTZ; //Pullups ON for Hysterese
+ 2fe:	96 9a       	sbi	0x12, 6	; 18
+			ist_z  = 1;
+ 300:	20 93 68 00 	sts	0x0068, r18
+			move_z++;
+ 304:	80 91 62 00 	lds	r24, 0x0062
+ 308:	8f 5f       	subi	r24, 0xFF	; 255
+ 30a:	80 93 62 00 	sts	0x0062, r24
+}
+
+void leds(uint8_t led, uint8_t show)
+{
+	if(show == ON) 			PORTD |=  led;
+	else if(show == OFF)	PORTD &= ~led;
+ 30e:	94 98       	cbi	0x12, 4	; 18
+ 310:	0f c0       	rjmp	.+30     	; 0x330 <main+0x1f2>
+			move_z++;
+			leds(ZMLED, OFF);
+			//PIND |= BUZZZ;
+		}
+
+		else if(!(PIND & PHOTZ) && ist_z)
+ 312:	86 99       	sbic	0x10, 6	; 16
+ 314:	0d c0       	rjmp	.+26     	; 0x330 <main+0x1f2>
+ 316:	80 91 68 00 	lds	r24, 0x0068
+ 31a:	88 23       	and	r24, r24
+ 31c:	49 f0       	breq	.+18     	; 0x330 <main+0x1f2>
+		{
+			//DARK to LIGHT on PHOTZ
+			PORTD &= ~PHOTZ; //Pullups OFF
+ 31e:	96 98       	cbi	0x12, 6	; 18
+			ist_z  = 0;
+ 320:	10 92 68 00 	sts	0x0068, r1
+			move_z++;
+ 324:	80 91 62 00 	lds	r24, 0x0062
+ 328:	8f 5f       	subi	r24, 0xFF	; 255
+ 32a:	80 93 62 00 	sts	0x0062, r24
+	PORTD &= ~BUZZZ;
+}
+
+void leds(uint8_t led, uint8_t show)
+{
+	if(show == ON) 			PORTD |=  led;
+ 32e:	94 9a       	sbi	0x12, 4	; 18
+		{
+			//No change on PHOTZ
+			;
+		}
+
+		if(move_z >= 2)
+ 330:	80 91 62 00 	lds	r24, 0x0062
+ 334:	82 30       	cpi	r24, 0x02	; 2
+ 336:	20 f0       	brcs	.+8      	; 0x340 <main+0x202>
+		{
+			move_z = 0;
+ 338:	10 92 62 00 	sts	0x0062, r1
+			cnt_z  = 0;
+ 33c:	10 92 65 00 	sts	0x0065, r1
+		}
+
+		if((cnt_z > ZTH) || (cnt_z < 0-ZTH))
+ 340:	80 91 65 00 	lds	r24, 0x0065
+ 344:	86 5f       	subi	r24, 0xF6	; 246
+ 346:	85 31       	cpi	r24, 0x15	; 21
+ 348:	08 f4       	brcc	.+2      	; 0x34c <main+0x20e>
+ 34a:	0f cf       	rjmp	.-482    	; 0x16a <main+0x2c>
+		{
+			cnt_z = 0;
+ 34c:	10 92 65 00 	sts	0x0065, r1
+ 350:	79 de       	rcall	.-782    	; 0x44 <estop.part.0>
+ 352:	80 e1       	ldi	r24, 0x10	; 16
+ 354:	90 de       	rcall	.-736    	; 0x76 <leds.part.1>
+ 356:	fd cf       	rjmp	.-6      	; 0x352 <main+0x214>
+
+00000358 <_exit>:
+ 358:	f8 94       	cli
+
+0000035a <__stop_program>:
+ 35a:	ff cf       	rjmp	.-2      	; 0x35a <__stop_program>
